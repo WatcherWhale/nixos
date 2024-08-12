@@ -13,55 +13,55 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
-    };
-
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/7d1660ee-6007-445b-9525-54302df0be4d";
-
-  fileSystems."/.swapvol" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=swap" ];
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C0F1-AC35";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
-    };
-
-  fileSystems."/home/watcherwhale" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=home/watcherwhale" ];
-    };
-
-  fileSystems."/home/watcherwhale/Games" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=home/watcherwhale/Games" ];
-    };
-
-  fileSystems."/home/work" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=home/work" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
+  # fileSystems."/" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=root" ];
+  #   };
+  #
+  # boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/7d1660ee-6007-445b-9525-54302df0be4d";
+  #
+  # fileSystems."/.swapvol" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=swap" ];
+  #   };
+  #
+  # fileSystems."/boot" =
+  #   { device = "/dev/disk/by-uuid/C0F1-AC35";
+  #     fsType = "vfat";
+  #     options = [ "fmask=0022" "dmask=0022" ];
+  #   };
+  #
+  # fileSystems."/home" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=home" ];
+  #   };
+  #
+  # fileSystems."/home/watcherwhale" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=home/watcherwhale" ];
+  #   };
+  #
+  # fileSystems."/home/watcherwhale/Games" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=home/watcherwhale/Games" ];
+  #   };
+  #
+  # fileSystems."/home/work" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=home/work" ];
+  #   };
+  #
+  # fileSystems."/nix" =
+  #   { device = "/dev/disk/by-uuid/e85c89ba-4d30-453a-9e2f-433aae4dae7a";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=nix" ];
+  #   };
 
   swapDevices = [ ];
 
