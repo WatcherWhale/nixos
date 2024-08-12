@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/vdb";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
@@ -23,13 +23,13 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted";
+                name = "root";
                 settings = {
                   allowDiscards = true;
                 };
                 content = {
                   type = "btrfs";
-                  # extraArgs = [ "-f" ];
+                  extraArgs = [ "-f" ];
                   subvolumes = {
                     "/root" = {
                       mountpoint = "/";
@@ -50,7 +50,10 @@
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
 
-                    "/home/work" = {};
+                    "/home/work" = {
+                      mountpoint = "/home/work";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
 
                     "/nix" = {
                       mountpoint = "/nix";
