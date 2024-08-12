@@ -38,7 +38,9 @@
     homeConfigurations = {
       watcherwhale = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [];
+        modules = [
+          ./homes/watcherwhale/home.nix
+        ];
       };
     };
   };
