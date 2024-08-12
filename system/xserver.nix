@@ -8,8 +8,8 @@
     ];
   };
 
+  services.libinput.enable = true;
   services.xserver  = {
-    libinput.enable = true;
     xkb = {
       layout = "us";
       options = "eurosign:e,caps:escape";
