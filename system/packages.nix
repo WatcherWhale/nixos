@@ -15,6 +15,7 @@
     unzip
     gcc
     home-manager
+    picom
   ];
 
   fonts.packages = with pkgs; [
