@@ -5,6 +5,8 @@
   ];
 
   home.packages = with pkgs; [
+    eza
+    stow
     zellij
     flameshot
   ];
