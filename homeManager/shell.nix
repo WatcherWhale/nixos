@@ -26,7 +26,6 @@ format = """\
   $jobs\
   $character\
   """
-#right_format= """$time"""
 
 [character]
 success_symbol = "[ 󰁕](bold blue)"
@@ -41,7 +40,6 @@ disabled = false
 format = "[$time]($style)"
 style = "bold cyan"
 time_format = "(%H:%M:%S)"
-
 
 [cmd_duration]
 disabled = true
@@ -69,9 +67,6 @@ format = "[$indicator]($style)"
 fish_indicator = ""
 bash_indicator = "\\[bash\\] "
 zsh_indicator = "\\[zsh\\] "
-
-[python]
-format = '[$\{symbol\}$\{pyenv_prefix\}($\{version\} )(\($virtualenv\) )]($style)'
 
 [custom.tf]
 symbol="󱁢"
