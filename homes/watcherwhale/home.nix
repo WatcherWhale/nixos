@@ -1,5 +1,11 @@
 {config, pkgs, ...}: 
 {
+  imports = [
+    ../../homeManager/default.nix
+    ../../homeManager/kubernetes.nix
+    ../../homeManager/steam.nix
+  ];
+
   home.username = "watcherwhale";
   home.homeDirectory = "/home/watcherwhale";
 
