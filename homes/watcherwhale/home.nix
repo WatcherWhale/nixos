@@ -2,7 +2,7 @@
 {
   imports = [
     ../../homeManager/default.nix
-    ../../homeManager/kubernetes.nix
+    # ../../homeManager/kubernetes.nix
     ../../homeManager/steam.nix
   ];
 
