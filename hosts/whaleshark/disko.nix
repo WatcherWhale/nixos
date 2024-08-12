@@ -47,7 +47,7 @@
                     };
                     "/home/watcherwhale/Games" = {
                       mountpoint = "/home/watcherwhale/Games";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [ "compress=zstd" "noatime" "uid=1000" "gid=1000" "dmask=007" "fmask=117"];
                     };
 
                     "/home/work" = {
