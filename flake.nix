@@ -23,6 +23,8 @@
       whaleshark = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          ./modules/extra/allowUnfree.nix
+
           disko.nixosModules.disko
           ./hosts/whaleshark/disko.nix
 
@@ -39,6 +41,7 @@
       watcherwhale = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
+          ./modules/extra/allowUnfree.nix
           ./homes/watcherwhale/home.nix
         ];
       };
