@@ -35,7 +35,4 @@
       allowedTCPPorts = [ 22 ];
     };
   };
-
-  # DO NOT TOUCH
-  system.stateVersion = "24.05";
 }
