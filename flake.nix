@@ -23,8 +23,8 @@
       whaleshark = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          disko.nixosModules.disko
-          ./hosts/whaleshark/disko.nix
+          # disko.nixosModules.disko
+          # ./hosts/whaleshark/disko.nix
 
           ./system/default.nix
           ./hosts/whaleshark/configuration.nix
