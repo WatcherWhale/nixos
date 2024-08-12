@@ -3,7 +3,7 @@
   imports = [
     ../../homeManager/default.nix
     # ../../homeManager/kubernetes.nix
-    ../../homeManager/steam.nix
+    # ../../homeManager/steam.nix
   ];
 
   home.username = "watcherwhale";
