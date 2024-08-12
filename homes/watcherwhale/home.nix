@@ -9,6 +9,7 @@
   home.homeDirectory = "/home/watcherwhale";
 
   home.packages = with pkgs; [
+    discord
   ];
 
   home.stateVersion = "24.05";

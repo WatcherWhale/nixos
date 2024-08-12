@@ -4,5 +4,6 @@
     k9s
     terraform
     kubectl
+    delta
   ];
 }

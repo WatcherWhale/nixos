@@ -16,6 +16,11 @@
     gcc
     home-manager
     picom
+
+    phinger-cursors
+    lxappearance
+    nordic
+    flat-remix-icon-theme
   ];
 
   fonts.packages = with pkgs; [
