@@ -2,8 +2,7 @@
 {
   imports = [
     ../../homeManager/default.nix
-    # ../../homeManager/kubernetes.nix
-    # ../../homeManager/steam.nix
+    ../../homeManager/devops.nix
   ];
 
   home.username = "watcherwhale";

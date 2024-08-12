@@ -2,11 +2,10 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./steam.nix
   ];
 
   networking.hostName = "whaleshark";
-
-  services.hardware.openrgb.enable = true;
 
   # DO NOT TOUCH
   system.stateVersion = "24.05";

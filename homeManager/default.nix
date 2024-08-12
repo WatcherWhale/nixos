@@ -6,7 +6,7 @@
 
   home.packages = with pkgs; [
     zellij
-    alacritty
+    flameshot
   ];
 
   programs.git.enable = true;

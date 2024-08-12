@@ -1,5 +1,8 @@
-{config, pkgs, ...}: 
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
+    k9s
+    terraform
+    kubectl
   ];
 }
