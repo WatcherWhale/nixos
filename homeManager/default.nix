@@ -9,6 +9,8 @@
     stow
     zellij
     flameshot
+    rofi
+    dunst
   ];
 
   programs.git.enable = true;
