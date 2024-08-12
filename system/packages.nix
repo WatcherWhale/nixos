@@ -14,6 +14,7 @@
     htop
     unzip
     gcc
+    home-manager
   ];
 
   fonts.packages = with pkgs; [
