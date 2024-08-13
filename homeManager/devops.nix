@@ -4,6 +4,7 @@
     k9s
     terraform
     kubectl
+    kubeswitch
     delta
 
     go

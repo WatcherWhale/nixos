@@ -12,6 +12,9 @@
     flameshot
     rofi
     dunst
+    zoxide
+    direnv
+    ranger
   ];
 
   programs.git.enable = true;
