@@ -6,6 +6,7 @@
     kubectl
     delta
 
+    go
     python3
     nodejs_20
   ];
