@@ -93,7 +93,7 @@
     enableBashIntegration = true;
     enableFishIntegration = true;
     settings = {
-      format = "$shell$sudo$username$directory$hostname$git_branch$git_commit$git_state$git_status$kubernetes$cmd_duration$custom$line_break$jobs$character";
+      format = "$shell$sudo$username$directory$hostname$git_branch$git_commit$git_state$git_status$kubernetes$custom$line_break$jobs$character";
       character = {
         success_symbol = "[ 󰁕](bold blue)";
         error_symbol = "[ 󰁕](bold red)";
