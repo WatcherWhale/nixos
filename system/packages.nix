@@ -19,7 +19,6 @@
 
     phinger-cursors
     lxappearance
-    nordic
     flat-remix-icon-theme
   ];
 

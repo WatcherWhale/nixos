@@ -12,5 +12,13 @@
     discord
   ];
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Nordic-bluish-accent";
+      package = pkgs.nordic;
+    };
+  };
+
   home.stateVersion = "24.05";
 }

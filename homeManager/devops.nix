@@ -5,5 +5,8 @@
     terraform
     kubectl
     delta
+
+    python3
+    nodejs_20
   ];
 }
