@@ -11,7 +11,7 @@
   ];
 
   services.hardware.openrgb = {
-    enable = true;
+    enable = false;
     motherboard = "amd";
   };
 
