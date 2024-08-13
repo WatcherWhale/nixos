@@ -17,6 +17,7 @@
     home-manager
     picom
     pavucontrol
+    gnome-keyring
   ];
 
   fonts.packages = with pkgs; [
