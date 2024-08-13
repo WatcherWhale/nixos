@@ -2,6 +2,7 @@
 {
   imports = [
     ./shell.nix
+    ./theming.nix
   ];
 
   home.packages = with pkgs; [

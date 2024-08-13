@@ -1,4 +1,4 @@
-{config, pkgs, ...}: 
+{ config, pkgs, ... }:
 {
   imports = [
     ../../homeManager/default.nix
@@ -11,14 +11,6 @@
   home.packages = with pkgs; [
     discord
   ];
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Nordic-bluish-accent";
-      package = pkgs.nordic;
-    };
-  };
 
   home.stateVersion = "24.05";
 }

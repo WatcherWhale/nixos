@@ -16,10 +16,7 @@
     gcc
     home-manager
     picom
-
-    phinger-cursors
-    lxappearance
-    flat-remix-icon-theme
+    pavucontrol
   ];
 
   fonts.packages = with pkgs; [

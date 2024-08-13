@@ -22,6 +22,8 @@
     blueman.enable = true;
   };
 
+  programs.dconf.enable = true;
+
   services.openssh.enable = true;
   networking = {
     networkmanager.enable = true;
