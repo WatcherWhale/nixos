@@ -3,6 +3,7 @@
   imports = [
     ./shell.nix
     ./theming.nix
+    ./browser.nix
   ];
 
   home.packages = with pkgs; [
@@ -20,10 +21,6 @@
   ];
 
   programs.git.enable = true;
-
-  programs.firefox = {
-    enable = true;
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
