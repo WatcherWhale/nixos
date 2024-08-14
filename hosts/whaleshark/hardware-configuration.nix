@@ -6,10 +6,9 @@
   ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "thunderbolt" "xhci_pci" "uas" "sd_mod" ];
-  boot.initrd.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "acpi_enforce_resources=lax" ];
 
   swapDevices = [ ];
 

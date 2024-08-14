@@ -31,4 +31,6 @@
       ln -sf /bin/sh /bin/bash
     '';
   };
+
+  services.greenclip.enable = true;
 }

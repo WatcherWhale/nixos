@@ -6,14 +6,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    i2c-tools
-    liquidctl
   ];
-
-  services.hardware.openrgb = {
-    enable = false;
-    motherboard = "amd";
-  };
 
   networking.hostName = "whaleshark";
 
