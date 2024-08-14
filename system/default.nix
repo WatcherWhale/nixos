@@ -27,6 +27,7 @@
   services.openssh.enable = true;
   networking = {
     networkmanager.enable = true;
+    useDHCP = lib.mkDefault true;
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];

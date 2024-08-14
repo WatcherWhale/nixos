@@ -2,7 +2,7 @@
 {
   programs.fish = {
     enable = false;
-  };
+ };
 
   programs.alacritty = {
     enable = true;
