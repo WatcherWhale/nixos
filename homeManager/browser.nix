@@ -16,14 +16,14 @@
         developing = {
           id = 0;
           name = "Developing";
-          color = "green";
+          color = "turquoise";
           icon = "circle";
         };
 
         trackingHell = {
           id = 1;
           name = "Tracking Hell";
-          color = "orange";
+          color = "red";
           icon = "fence";
         };
 
