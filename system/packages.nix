@@ -16,7 +16,6 @@
     home-manager
     picom
     pavucontrol
-    gnome-keyring
     xclip
     seahorse
     numlockx
