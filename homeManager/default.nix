@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./xsession.nix
     ./shell.nix
     ./theming.nix
     ./browser.nix
