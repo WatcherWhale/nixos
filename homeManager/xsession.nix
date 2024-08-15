@@ -1,4 +1,0 @@
-{ ... }:
-{
-  xsession.enable = true;
-}

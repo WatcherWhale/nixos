@@ -1,11 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    ./xsession.nix
+    ./autorandr.nix
     ./shell.nix
     ./theming.nix
     ./browser.nix
   ];
+  xsession.enable = true;
 
   home.packages = with pkgs; [
     eza
