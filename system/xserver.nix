@@ -22,6 +22,7 @@
         monitorConfig = ''
           DisplaySize 2560 1440
           VertRefresh 74.92
+          Option "PreferredMode" "2560x1440"
         '';
       }
       {
@@ -30,6 +31,7 @@
           DisplaySize 2560 1440
           VertRefresh 74.92
           Option "RightOf" "DP-1"
+          Option "PreferredMode" "2560x1440"
         '';
       }
       {
@@ -38,12 +40,16 @@
           DisplaySize 1920 1080
           VertRefresh 60
           Option "LeftOf" "DP-1"
+          Option "PreferredMode" "1920x1080"
         '';
       }
     ];
 
     displayManager.lightdm = {
       greeters.gtk = {
+        extraConfig = ''
+          font-name = NotoSans Nerd Font 16
+        '';
         theme = {
           name = "Nordic-bluish-accent";
           package = pkgs.nordic;
