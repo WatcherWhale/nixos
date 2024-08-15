@@ -23,7 +23,7 @@
           DisplaySize 2560 1440
           VertRefresh 74.92
         '';
-      },
+      }
       {
         output = "DP-2";
         monitorConfig = ''
@@ -31,7 +31,7 @@
           VertRefresh 74.92
           Option "RightOf" "DP-1"
         '';
-      },
+      }
       {
         output = "HDMI-1";
         monitorConfig = ''
@@ -39,7 +39,7 @@
           VertRefresh 60
           Option "LeftOf" "DP-1"
         '';
-      },
+      }
     ];
 
     displayManager.lightdm = {
