@@ -24,7 +24,19 @@
 
   services.unclutter.enable = true;
   services.flameshot.enable = true;
-  services.redshift.enable = true;
+  services.redshift = {
+    enable = true;
+
+    latitude = "51.26";
+    longitude = "4.40";
+
+    tray = true;
+
+    temperature= {
+      day = 6500;
+      night = 4500;
+    };
+  };
 
   programs.git.enable = true;
 
