@@ -7,7 +7,6 @@
     fish
     git
     fzf
-    autorandr
     jq
     acpi
     killall
@@ -18,6 +17,9 @@
     picom
     pavucontrol
     gnome-keyring
+    xclip
+    seahorse
+    numlockx
   ];
 
   fonts.packages = with pkgs; [

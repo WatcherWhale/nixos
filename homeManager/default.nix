@@ -10,7 +10,6 @@
     eza
     stow
     zellij
-    flameshot
     rofi
     dunst
     zoxide
@@ -19,9 +18,19 @@
     nitrogen
     bat
     thunderbird
+    numlockx
+    networkmanagerapplet
   ];
 
+  services.unclutter.enable = true;
+  services.flameshot.enable = true;
+  services.redshift.enable = true;
+
   programs.git.enable = true;
+
+  home.sessionPath = [
+    "$HOME/.scripts"
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";

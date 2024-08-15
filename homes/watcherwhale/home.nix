@@ -16,9 +16,5 @@
     discord
   ];
 
-  home.sessionPath = [
-    "${homePath}/.scripts"
-  ];
-
   home.stateVersion = "24.05";
 }
