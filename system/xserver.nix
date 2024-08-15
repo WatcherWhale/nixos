@@ -15,4 +15,7 @@
       options = "eurosign:e,caps:escape";
     };
   };
+
+  services.xserver = {
+  };
 }

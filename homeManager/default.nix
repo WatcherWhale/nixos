@@ -18,6 +18,7 @@
     ranger
     nitrogen
     bat
+    thunderbird
   ];
 
   programs.git.enable = true;

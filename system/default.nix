@@ -6,6 +6,14 @@
     ./sound.nix
   ];
 
+  # automatic garbace collection
+  nix.gc = {
+    automatic = true;
+    dates = "02:00";
+    randomizedDelaySec = "1hour";
+    options = "--delete-older-than +5";
+  };
+
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
