@@ -6,7 +6,13 @@
     ./theming.nix
     ./browser.nix
   ];
-  xsession.enable = true;
+  xsession = {
+    enable = true;
+    initExtra = ''
+      autorandr -c
+    '';
+    numlock.enable = true;
+  };
 
   home.packages = with pkgs; [
     eza
@@ -20,7 +26,6 @@
     nitrogen
     bat
     thunderbird
-    numlockx
     networkmanagerapplet
   ];
 

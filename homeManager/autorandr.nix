@@ -2,6 +2,13 @@
 {
   programs.autorandr = {
     enable = true;
+
+    hooks = {
+      postswitch = {
+        "qtile-restart" = "qtile cmd-obj -o cmd -f restart";
+      };
+    };
+
     profiles = {
       "home" = {
         fingerprint = {
