@@ -11,6 +11,7 @@
     python3
     nodejs_20
 
-
+    azure-cli
+    kubelogin
   ];
 }
