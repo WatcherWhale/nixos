@@ -10,7 +10,8 @@
     enable = true;
     initExtra = ''
       autorandr -c
-      xset s off -dpms
+      xset s off
+      xset -dpms
     '';
     numlock.enable = true;
   };
