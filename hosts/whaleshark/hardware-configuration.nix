@@ -6,9 +6,11 @@
   ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "thunderbolt" "xhci_pci" "uas" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   swapDevices = [ ];
 
