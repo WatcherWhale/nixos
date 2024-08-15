@@ -9,9 +9,8 @@
   # automatic garbace collection
   nix.gc = {
     automatic = true;
-    dates = "02:00";
-    randomizedDelaySec = "1hour";
-    options = "--delete-older-than +5";
+    dates = "hourly";
+    options = "--delete-older-than 30d";
   };
 
   # Enable flakes
@@ -39,6 +38,23 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];
+    };
+  };
+
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
     };
   };
 }

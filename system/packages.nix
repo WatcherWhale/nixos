@@ -20,7 +20,9 @@
     xclip
     seahorse
     numlockx
+    polkit_gnome
   ];
+
 
   fonts.packages = with pkgs; [
     nerdfonts
