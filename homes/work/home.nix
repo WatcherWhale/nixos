@@ -5,8 +5,8 @@
   in
 {
   imports = [
-    ../../homeManager/default.nix
-    ../../homeManager/devops.nix
+    ../../modules/homeManager/default.nix
+    ../../modules/homeManager/devops.nix
   ];
 
   home.username = user;

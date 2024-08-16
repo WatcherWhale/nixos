@@ -35,7 +35,7 @@
           ./hosts/whaleshark/disko.nix
 
           # System config
-          ./system/default.nix
+          ./modules/system/default.nix
           ./hosts/whaleshark/configuration.nix
 
           # Create users
