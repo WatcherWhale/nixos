@@ -40,6 +40,7 @@
     rofi-bluetooth
     qalculate-gtk
     calc
+    trash-cli
   ];
 
   services.unclutter.enable = true;
