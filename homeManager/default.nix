@@ -6,6 +6,14 @@
     ./theming.nix
     ./browser.nix
   ];
+
+  # automatic garbace collection
+  nix.gc = {
+    automatic = true;
+    frequency = "hourly";
+    options = "--delete-older-than 30d";
+  };
+
   xsession = {
     enable = true;
     initExtra = ''
