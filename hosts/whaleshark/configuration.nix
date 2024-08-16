@@ -2,10 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./steam.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
+    ../modules/programs/steam.nix
   ];
 
   networking.hostName = "whaleshark";
