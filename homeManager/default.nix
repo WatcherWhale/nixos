@@ -5,7 +5,6 @@
     ./shell.nix
     ./theming.nix
     ./browser.nix
-    ../modules/nix/gc.nix
   ];
   xsession = {
     enable = true;
