@@ -21,7 +21,6 @@
     stow
     zellij
     rofi
-    dunst
     zoxide
     direnv
     ranger
