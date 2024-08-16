@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
     k9s
@@ -13,5 +13,7 @@
 
     azure-cli
     kubelogin
+
+    inputs.zellij-store.packages.${system}.default
   ];
 }

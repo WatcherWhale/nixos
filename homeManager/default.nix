@@ -4,6 +4,7 @@
     ./autorandr.nix
     ./shell.nix
     ./theming.nix
+    ./dunst.nix
     ./browser.nix
   ];
 
@@ -36,6 +37,9 @@
     bat
     thunderbird
     networkmanagerapplet
+    rofi-bluetooth
+    qalculate-gtk
+    calc
   ];
 
   services.unclutter.enable = true;

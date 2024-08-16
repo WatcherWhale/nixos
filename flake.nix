@@ -11,6 +11,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zellij-store = {
+      url = "github:WatcherWhale/Zellij-Store";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, disko, ... } @inputs:
@@ -18,7 +23,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-
     nixosConfigurations = {
       whaleshark = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -44,6 +48,7 @@
     homeConfigurations = {
       watcherwhale = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {inherit inputs;};
         modules = [
           ./modules/extra/allowUnfree.nix
           ./homes/watcherwhale/home.nix

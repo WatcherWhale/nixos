@@ -60,7 +60,28 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "zellij-store": "zellij-store"
+      }
+    },
+    "zellij-store": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1723809650,
+        "narHash": "sha256-dNT2dxRNInNj6fV20v43/hE4IMSYqocUj4E5emxaOKk=",
+        "owner": "WatcherWhale",
+        "repo": "Zellij-Store",
+        "rev": "3529f2bf3c98cdaad341f2a353554e8972bc1647",
+        "type": "github"
+      },
+      "original": {
+        "owner": "WatcherWhale",
+        "repo": "Zellij-Store",
+        "type": "github"
       }
     }
   },
