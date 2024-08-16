@@ -4,14 +4,8 @@
     ./packages.nix
     ./xserver.nix
     ./sound.nix
+    ../modules/nix/gc.nix
   ];
-
-  # automatic garbace collection
-  nix.gc = {
-    automatic = true;
-    dates = "hourly";
-    options = "--delete-older-than 30d";
-  };
 
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
