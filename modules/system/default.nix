@@ -36,7 +36,7 @@
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     firewall = {
-      enable = false;
+      enable = true;
       allowedTCPPorts = [ 22 ];
     };
   };
