@@ -2,7 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../modules/programs/steam.nix
+    ../../modules/programs/steam.nix
+    ../../modules/programs/sunshine.nix
   ];
 
   networking.hostName = "whaleshark";
