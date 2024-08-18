@@ -31,7 +31,6 @@
     zellij
     rofi
     zoxide
-    direnv
     ranger
     nitrogen
     bat

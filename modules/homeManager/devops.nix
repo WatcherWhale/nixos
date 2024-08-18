@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, stablePkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
     k9s
@@ -11,8 +11,10 @@
     python3
     nodejs_20
 
-    azure-cli
+    stablePkgs.azure-cli
     kubelogin
+
+    sops
 
     inputs.zellij-store.packages.${system}.default
   ];
