@@ -56,6 +56,7 @@
       };
       work = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {inherit inputs;};
         modules = [
           ./modules/extra/allowUnfree.nix
           ./homes/work/home.nix
