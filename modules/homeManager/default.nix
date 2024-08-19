@@ -67,7 +67,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GOPATH = "~/.local/go";
+    GOPATH = "$HOME/.local/go";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
   };
 

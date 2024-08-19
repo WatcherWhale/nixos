@@ -2,10 +2,16 @@
 {
   home.packages = with pkgs; [
     k9s
-    terraform
     kubectl
     kubeswitch
+    kubernetes-helm
+
+    terraform
+    tflint
+
     delta
+
+    go-task
 
     go
     python3
@@ -17,5 +23,8 @@
     sops
 
     inputs.zellij-store.packages.${system}.default
+
+    rustc
+    cargo
   ];
 }
