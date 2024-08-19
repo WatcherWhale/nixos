@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/programs/steam.nix
     ../../modules/programs/sunshine.nix
+    ../../modules/programs/docker.nix
   ];
 
   networking.hostName = "whaleshark";
