@@ -40,6 +40,7 @@
     qalculate-gtk
     calc
     trash-cli
+    libarchive
   ];
 
   services.unclutter.enable = true;
