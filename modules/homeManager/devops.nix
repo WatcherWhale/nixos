@@ -11,9 +11,10 @@
 
     delta
 
+    go
+    golangci-lint
     go-task
 
-    go
     python3
     nodejs_20
 
