@@ -2,38 +2,45 @@
 {
   programs.firefox = {
     enable = true;
+
     languagePacks = [
       "en-GB"
       "nl"
     ];
 
-    profiles.defaultProfile = {
-      name = "Default Profile";
+    policies = {
+      DisableAppUpdate = false;
+      DisableDeveloperTools = false;
+    };
+
+    profiles.default = {
+      name = "firefox";
+      id = 0;
       isDefault = true;
 
-      containersForce = true;
-      containers = {
-        developing = {
-          id = 0;
-          name = "Developing";
-          color = "turquoise";
-          icon = "circle";
-        };
-
-        trackingHell = {
-          id = 1;
-          name = "Tracking Hell";
-          color = "red";
-          icon = "fence";
-        };
-
-        "personal" = {
-          id = 2;
-          name = "Personal";
-          color = "blue";
-          icon = "chill";
-        };
-      };
+      # containersForce = false;
+      # containers = {
+      #   developing = {
+      #     id = 1;
+      #     name = "Developing";
+      #     color = "turquoise";
+      #     icon = "circle";
+      #   };
+      #
+      #   trackingHell = {
+      #     id = 2;
+      #     name = "Tracking Hell";
+      #     color = "red";
+      #     icon = "fence";
+      #   };
+      #
+      #   "personal" = {
+      #     id = 3;
+      #     name = "Personal";
+      #     color = "blue";
+      #     icon = "chill";
+      #   };
+      # };
 
       userChrome = ''
         #TabsToolbar {

@@ -1,5 +1,10 @@
 { pkgs, zellij-store, ... }:
 {
+  home.pointerCursor = {
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
+  };
+
   gtk = {
     enable = true;
 

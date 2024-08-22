@@ -7,7 +7,9 @@
     kubernetes-helm
 
     terraform
-    tflint
+
+    crane
+    oras
 
     delta
 
@@ -20,8 +22,6 @@
 
     stablePkgs.azure-cli
     kubelogin
-
-    sops
 
     inputs.zellij-store.packages.${system}.default
 
