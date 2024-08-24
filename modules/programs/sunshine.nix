@@ -23,6 +23,7 @@ in
       description = "Sunshine self-hosted game stream host for Moonlight";
       startLimitBurst = 5;
       startLimitIntervalSec = 500;
+      wantedBy = ["default.target"];
       serviceConfig = {
         ExecStart = "${config.security.wrapperDir}/sunshine";
         Restart = "on-failure";

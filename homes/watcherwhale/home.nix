@@ -12,8 +12,10 @@
   home.username = user;
   home.homeDirectory = homePath;
 
+
   home.packages = with pkgs; [
     discord
+    modrinth-app
   ];
 
   home.stateVersion = "24.05";
