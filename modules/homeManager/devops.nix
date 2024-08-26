@@ -10,6 +10,11 @@
 
     crane
     oras
+    cosign
+
+    sops
+
+    trivy
 
     delta
 

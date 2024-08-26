@@ -41,6 +41,7 @@
     calc
     trash-cli
     libarchive
+    viddy
   ];
 
   services.unclutter.enable = true;
