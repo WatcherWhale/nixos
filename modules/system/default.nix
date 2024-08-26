@@ -41,6 +41,12 @@
     };
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+    ];
+  };
+
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
