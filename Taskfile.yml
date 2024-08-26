@@ -1,0 +1,12 @@
+version: 3
+
+tasks:
+  update:
+    - nix flake update
+    - nix flake archive
+
+  home:
+    - home-manager switch --flake .
+
+  host:
+    - sudo nixos-rebuild switch --flake .
