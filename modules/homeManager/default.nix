@@ -42,6 +42,7 @@
     trash-cli
     libarchive
     viddy
+    ripgrep
   ];
 
   services.unclutter.enable = true;
