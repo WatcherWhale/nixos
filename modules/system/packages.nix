@@ -20,6 +20,7 @@
     seahorse
     numlockx
     polkit_gnome
+    wget
   ];
 
   programs.thunar = {

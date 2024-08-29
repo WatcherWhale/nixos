@@ -43,6 +43,7 @@
     libarchive
     viddy
     ripgrep
+    fd
   ];
 
   services.unclutter.enable = true;
