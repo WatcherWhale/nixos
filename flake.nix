@@ -1,25 +1,6 @@
 {
   description = "personal nixos configs";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgsstable.url = "github:nixos/nixpkgs/nixos-24.05";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zellij-store = {
-      url = "github:WatcherWhale/Zellij-Store";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
   outputs = { self, nixpkgs, nixpkgsstable, home-manager, disko, ... } @inputs:
     let
       system = "x86_64-linux";
@@ -67,4 +48,24 @@
       };
     };
   };
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgsstable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zellij-store = {
+      url = "github:WatcherWhale/Zellij-Store";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
 }
