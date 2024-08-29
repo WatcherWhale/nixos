@@ -44,6 +44,7 @@
     viddy
     ripgrep
     fd
+    yt-dlp
   ];
 
   services.unclutter.enable = true;
