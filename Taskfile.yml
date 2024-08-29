@@ -6,7 +6,17 @@ tasks:
     - nix flake archive
 
   home:
+    - task: add-files
     - home-manager switch --flake .
 
   host:
+    - task: add-files
     - sudo nixos-rebuild switch --flake .
+
+  add-files:
+    - |
+      cd files
+      for file in *;
+      do
+        nix store add-file $file
+      done
