@@ -5,6 +5,7 @@
     ../../modules/programs/steam.nix
     ../../modules/programs/sunshine.nix
     ../../modules/programs/docker.nix
+    ../../modules/programs/flatpak.nix
   ];
 
   networking.hostName = "whaleshark";
