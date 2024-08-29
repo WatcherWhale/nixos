@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, config, pkgs, ... }:
   let
     user = "work";
     homePath = "/home/${user}";

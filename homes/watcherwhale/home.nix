@@ -7,6 +7,9 @@
   imports = [
     ../../modules/homeManager/default.nix
     ../../modules/homeManager/devops.nix
+
+    ../../modules/programs/dungeondraft/home-manager.nix
+    ../../modules/programs/wonderdraft/home-manager.nix
   ];
 
   home.username = user;
