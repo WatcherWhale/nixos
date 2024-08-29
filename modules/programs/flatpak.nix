@@ -1,4 +1,15 @@
 { pkgs, ... }: {
+  xdg.portal = {
+    enable = true;
+    config = {
+      common = {
+        default = [
+          "gtk"
+        ];
+      };
+    };
+  };
+
   services.flatpak = {
     enable = true;
   };
