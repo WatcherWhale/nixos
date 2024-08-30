@@ -13,7 +13,7 @@
   nix.gc = {
     automatic = true;
     frequency = "hourly";
-    options = "--delete-older-than 14d";
+    options = "--delete-older-than 7d";
   };
 
   xsession = {
