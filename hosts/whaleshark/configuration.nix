@@ -1,16 +1,16 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/programs/steam.nix
-    ../../modules/programs/sunshine.nix
-    ../../modules/programs/docker.nix
-    ../../modules/programs/flatpak.nix
+
+    "${self}/modules/programs/steam.nix"
+    "${self}/modules/programs/sunshine"
+
+    "${self}/modules/programs/docker.nix"
+    "${self}/modules/programs/flatpak.nix"
   ];
 
   networking.hostName = "whaleshark";
-
-  programs.sunshine.enable = true;
 
   # DO NOT TOUCH
   system.stateVersion = "24.05";

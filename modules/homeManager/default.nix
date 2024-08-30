@@ -6,6 +6,7 @@
     ./theming.nix
     ./dunst.nix
     ./browser.nix
+    ./devops.nix
   ];
 
   # automatic garbace collection

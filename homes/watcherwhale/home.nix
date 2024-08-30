@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
+{ self, pkgs, ... }:
   let
     user = "watcherwhale";
     homePath = "/home/${user}";
   in
 {
   imports = [
-    ../../modules/homeManager/default.nix
-    ../../modules/homeManager/devops.nix
+    "${self}/modules/homeManager"
 
-    ../../modules/programs/dungeondraft/home-manager.nix
-    ../../modules/programs/wonderdraft/home-manager.nix
+    "${self}/modules/programs/dungeondraft/home-manager.nix"
+    "${self}/modules/programs/wonderdraft/home-manager.nix"
   ];
 
   home.username = user;

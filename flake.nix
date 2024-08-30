@@ -1,11 +1,11 @@
 {
   description = "personal nixos configs";
 
-  outputs = { self, nixpkgs, nixpkgsstable, home-manager, disko, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, disko, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      stablePkgs = nixpkgsstable.legacyPackages.${system};
+      stablePkgs = inputs.nixpkgsstable.legacyPackages.${system};
     in {
     nixosConfigurations = {
       whaleshark = nixpkgs.lib.nixosSystem {
@@ -32,7 +32,7 @@
     homeConfigurations = {
       watcherwhale = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {inherit inputs; inherit stablePkgs;};
+        extraSpecialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
         modules = [
           ./modules/extra/allowUnfree.nix
           ./homes/watcherwhale/home.nix

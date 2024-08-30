@@ -1,12 +1,11 @@
-{ self, config, pkgs, ... }:
+{ self, ... }:
   let
     user = "work";
     homePath = "/home/${user}";
   in
 {
   imports = [
-    ../../modules/homeManager/default.nix
-    ../../modules/homeManager/devops.nix
+    "${self}/modules/homeManager"
   ];
 
   home.username = user;
