@@ -37,5 +37,6 @@
     cargo
 
     mqtt-explorer
+    dbeaver-bin
   ];
 }
