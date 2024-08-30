@@ -7,8 +7,8 @@
   imports = [
     "${self}/modules/homeManager"
 
-    "${self}/modules/programs/dungeondraft/home-manager.nix"
-    "${self}/modules/programs/wonderdraft/home-manager.nix"
+    "${self}/modules/programs/dungeondraft"
+    "${self}/modules/programs/wonderdraft"
   ];
 
   home.username = user;
