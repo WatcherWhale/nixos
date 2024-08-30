@@ -38,5 +38,6 @@
 
     mqtt-explorer
     dbeaver-bin
+    nil
   ];
 }
