@@ -45,6 +45,7 @@
     ripgrep
     fd
     yt-dlp
+    devour
   ];
 
   services.unclutter.enable = true;

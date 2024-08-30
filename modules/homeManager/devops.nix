@@ -1,5 +1,8 @@
 { pkgs, stablePkgs, inputs, ... }:
 {
+  imports = [
+    ../programs/azure-cli.nix
+  ];
   home.packages = with pkgs; [
     k9s
     kubectl
@@ -23,14 +26,16 @@
     go-task
 
     python3
+    python3Packages.pip
     nodejs_20
 
-    stablePkgs.azure-cli
     kubelogin
 
     inputs.zellij-store.packages.${system}.default
 
     rustc
     cargo
+
+    mqtt-explorer
   ];
 }
