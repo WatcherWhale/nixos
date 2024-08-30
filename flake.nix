@@ -9,7 +9,7 @@
     in {
     nixosConfigurations = {
       whaleshark = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; inherit stablePkgs;};
+        specialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
         modules = [
           # Allow Unfree packages
           ./modules/extra/allowUnfree.nix
@@ -40,7 +40,7 @@
       };
       work = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {inherit inputs; inherit stablePkgs;};
+        extraSpecialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
         modules = [
           ./modules/extra/allowUnfree.nix
           ./homes/work/home.nix
