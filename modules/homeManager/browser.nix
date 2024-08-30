@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -85,5 +85,6 @@
 
   home.packages = with pkgs; [
     brave
+    inputs.zen-browser.packages."${system}".specific
   ];
 }
