@@ -40,6 +40,7 @@ let
 
   extensions = with pkgs.azure-cli.extensions; [
     azure-iot
+    fzf
   ];
 in
 {
