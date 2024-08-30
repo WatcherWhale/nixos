@@ -5,7 +5,7 @@
   in
 {
   imports = [
-    "${self}/modules/homeManager"
+    "${self}/modules/home-manager"
 
     "${self}/modules/programs/dungeondraft"
     "${self}/modules/programs/wonderdraft"
