@@ -1,53 +1,73 @@
 {
   description = "personal nixos configs";
 
-  outputs = { self, nixpkgs, home-manager, disko, ... } @inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      disko,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       stablePkgs = inputs.nixpkgsstable.legacyPackages.${system};
-    in {
-    nixosConfigurations = {
-      whaleshark = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
-        modules = [
-          # Allow Unfree packages
-          ./modules/extra/allowUnfree.nix
+    in
+    {
+      nixosConfigurations = {
+        whaleshark = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [
+            # Allow Unfree packages
+            ./modules/extra/allowUnfree.nix
 
-          # Load disk config
-          disko.nixosModules.disko
-          ./hosts/whaleshark/disko.nix
+            # Load disk config
+            disko.nixosModules.disko
+            ./hosts/whaleshark/disko.nix
 
-          # System config
-          ./modules/system/default.nix
-          ./hosts/whaleshark/configuration.nix
+            # System config
+            ./modules/system/default.nix
+            ./hosts/whaleshark/configuration.nix
 
-          # Create users
-          ./homes/watcherwhale/user.nix
-          ./homes/work/user.nix
-        ];
+            # Create users
+            ./homes/watcherwhale/user.nix
+            ./homes/work/user.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        watcherwhale = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [
+            ./modules/extra/allowUnfree.nix
+            ./homes/watcherwhale/home.nix
+          ];
+        };
+        work = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [
+            ./modules/extra/allowUnfree.nix
+            ./homes/work/home.nix
+          ];
+        };
       };
     };
-
-    homeConfigurations = {
-      watcherwhale = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
-        modules = [
-          ./modules/extra/allowUnfree.nix
-          ./homes/watcherwhale/home.nix
-        ];
-      };
-      work = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {inherit self; inherit inputs; inherit stablePkgs;};
-        modules = [
-          ./modules/extra/allowUnfree.nix
-          ./homes/work/home.nix
-        ];
-      };
-    };
-  };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

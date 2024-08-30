@@ -1,6 +1,11 @@
 # Source: https://github.com/LongerHV/nixos-configuration/blob/master/modules/nixos/sunshine.nix
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.programs.sunshine;
@@ -11,8 +16,18 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    networking.firewall.allowedTCPPortRanges = [{ from = 47984; to = 48010; }];
-    networking.firewall.allowedUDPPortRanges = [{ from = 47998; to = 48010; }];
+    networking.firewall.allowedTCPPortRanges = [
+      {
+        from = 47984;
+        to = 48010;
+      }
+    ];
+    networking.firewall.allowedUDPPortRanges = [
+      {
+        from = 47998;
+        to = 48010;
+      }
+    ];
     security.wrappers.sunshine = {
       owner = "root";
       group = "root";
@@ -23,7 +38,7 @@ in
       description = "Sunshine self-hosted game stream host for Moonlight";
       startLimitBurst = 5;
       startLimitIntervalSec = 500;
-      wantedBy = ["default.target"];
+      wantedBy = [ "default.target" ];
       serviceConfig = {
         ExecStart = "${config.security.wrapperDir}/sunshine";
         Restart = "on-failure";

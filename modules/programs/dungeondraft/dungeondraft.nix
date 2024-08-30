@@ -50,8 +50,8 @@ stdenv.mkDerivation {
     mv opt/Dungeondraft/* $out/opt/Dungeondraft
     # Can't use wrapProgram because godot seems to load data files based upon executable name
     makeWrapper $out/opt/Dungeondraft/Dungeondraft.x86_64 $out/opt/Dungeondraft/Dungeondraft.x86_64.wrapped \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [udev]} \
-      --prefix PATH : ${lib.makeBinPath [zenity]}
+      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ udev ]} \
+      --prefix PATH : ${lib.makeBinPath [ zenity ]}
     mkdir -p $out/share/applications
     mv usr/share/applications/* $out/share/applications
     sed -i "s|Exec=/opt/Dungeondraft/Dungeondraft.x86_64|Exec=$out/opt/Dungeondraft/Dungeondraft.x86_64.wrapped|g" $out/share/applications/Dungeondraft.desktop

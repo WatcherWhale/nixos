@@ -1,4 +1,9 @@
-{ pkgs, lib, stablePkgs, ... }:
+{
+  pkgs,
+  lib,
+  stablePkgs,
+  ...
+}:
 let
   mkAzExtension =
     {
@@ -29,13 +34,17 @@ let
         "meta"
       ])
     );
+
   azure-iot = mkAzExtension rec {
     pname = "azure-iot";
     version = "0.24.0";
     url = "https://github.com/Azure/azure-iot-cli-extension/releases/download/v${version}/azure_iot-${version}-py3-none-any.whl";
     sha256 = "sha256-o25B8okE8vKe/Tjr69poI8CpEBvtPADgrwPP/81yHaE=";
     description = "Azure IoT Extension";
-    propagatedBuildInputs = with pkgs.python3Packages; [ isodate tqdm ];
+    propagatedBuildInputs = with pkgs.python3Packages; [
+      isodate
+      tqdm
+    ];
   };
 
   extensions = with pkgs.azure-cli.extensions; [
@@ -48,4 +57,3 @@ in
     (azure-cli.withExtensions extensions)
   ];
 }
-

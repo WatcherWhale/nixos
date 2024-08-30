@@ -8,47 +8,48 @@
   libpulseaudio,
   alsaLib,
   libGL,
-}: let
+}:
+let
   version = "1.1.8.2";
   src = /nix/store/b90b5gj8nzghxgmbblfyvk5fm38kfgdh-Wonderdraft-1.1.8.2-b-Linux64.zip;
 in
-  stdenv.mkDerivation {
-    name = "wonderdraft-${version}";
+stdenv.mkDerivation {
+  name = "wonderdraft-${version}";
 
-    inherit src;
+  inherit src;
 
-    unpackPhase = "true";
+  unpackPhase = "true";
 
-    installPhase = ''
-      mkdir -p $out/opt/Wonderdraft/
+  installPhase = ''
+    mkdir -p $out/opt/Wonderdraft/
 
-      unzip ${src} -d $out/opt/Wonderdraft/
-      chmod +x $out/opt/Wonderdraft/Wonderdraft.x86_64
+    unzip ${src} -d $out/opt/Wonderdraft/
+    chmod +x $out/opt/Wonderdraft/Wonderdraft.x86_64
 
-      mkdir -p $out/share/icons
-      ln -s $out/opt/Wonderdraft/Wonderdraft.png $out/share/icons/wonderdraft.png
+    mkdir -p $out/share/icons
+    ln -s $out/opt/Wonderdraft/Wonderdraft.png $out/share/icons/wonderdraft.png
 
-      mkdir -p $out/bin
-      ln -s $out/opt/Wonderdraft/Wonderdraft.x86_64 $out/bin/wonderdraft
-    '';
+    mkdir -p $out/bin
+    ln -s $out/opt/Wonderdraft/Wonderdraft.x86_64 $out/bin/wonderdraft
+  '';
 
-    nativeBuildInputs = [
-      autoPatchelfHook
-      unzip
-    ];
+  nativeBuildInputs = [
+    autoPatchelfHook
+    unzip
+  ];
 
-    buildInputs = [
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXinerama
-      xorg.libXrandr
-      xorg.libXi
-      alsaLib
-      libpulseaudio
-      libGL
-    ];
+  buildInputs = [
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXinerama
+    xorg.libXrandr
+    xorg.libXi
+    alsaLib
+    libpulseaudio
+    libGL
+  ];
 
-    meta = with lib; {
-      platforms = ["x86_64-linux"];
-    };
-  }
+  meta = with lib; {
+    platforms = [ "x86_64-linux" ];
+  };
+}

@@ -1,8 +1,8 @@
 { self, pkgs, ... }:
-  let
-    user = "watcherwhale";
-    homePath = "/home/${user}";
-  in
+let
+  user = "watcherwhale";
+  homePath = "/home/${user}";
+in
 {
   imports = [
     "${self}/modules/home-manager"
@@ -13,7 +13,6 @@
 
   home.username = user;
   home.homeDirectory = homePath;
-
 
   home.packages = with pkgs; [
     modrinth-app

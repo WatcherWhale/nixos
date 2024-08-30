@@ -1,4 +1,9 @@
-{ pkgs, stablePkgs, inputs, ... }:
+{
+  pkgs,
+  stablePkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ../programs/azure-cli.nix

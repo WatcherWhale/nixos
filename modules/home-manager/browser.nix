@@ -61,18 +61,29 @@
         ];
         engines = {
           "Brave" = {
-            urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
+            urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
           };
           "Bing".metaData.hidden = true;
           "Nix Packages" = {
-            urls = [{
-              template = "https://search.nixos.org/packages";
-              params = [
-                { name = "channel"; value = "unstable"; }
-                { name = "type"; value = "packages"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@np" ];

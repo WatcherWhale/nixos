@@ -33,31 +33,54 @@
                   subvolumes = {
                     "/root" = {
                       mountpoint = "/";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
 
                     "/home" = {
                       mountpoint = "/home";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
 
                     "/home/watcherwhale" = {
                       mountpoint = "/home/watcherwhale";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
                     "/home/watcherwhale/Games" = {
                       mountpoint = "/home/watcherwhale/Games";
-                      mountOptions = [ "compress=zstd" "noatime" "user" "rw" "utf8" "noauto" "umask=000" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                        "user"
+                        "rw"
+                        "utf8"
+                        "noauto"
+                        "umask=000"
+                      ];
                     };
 
                     "/home/work" = {
                       mountpoint = "/home/work";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
 
                     "/nix" = {
                       mountpoint = "/nix";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
 
                     "/swap" = {

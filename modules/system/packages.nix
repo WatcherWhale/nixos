@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -25,7 +30,10 @@
 
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
   };
 
   fonts.packages = with pkgs; [
@@ -34,7 +42,7 @@
   ];
 
   system.activationScripts.binbash = {
-    deps = ["binsh"];
+    deps = [ "binsh" ];
     text = ''
       ln -sf /bin/sh /bin/bash
     '';
