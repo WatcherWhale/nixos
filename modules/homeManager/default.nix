@@ -46,6 +46,7 @@
     fd
     yt-dlp
     devour
+    nixfmt-rfc-style
   ];
 
   services.unclutter.enable = true;
