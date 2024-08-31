@@ -37,6 +37,7 @@
     kubelogin
 
     inputs.zellij-store.packages.${system}.default
+    inputs.gogl-ci.packages.${system}.default
 
     rustc
     cargo
