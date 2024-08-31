@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "gogl-ci": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1725103390,
+        "narHash": "sha256-tcQ00mV8WW2oU1MQXsS3cKzfHZOJhT40S85xfJtGFzE=",
+        "owner": "WatcherWhale",
+        "repo": "gogl-ci",
+        "rev": "00b5dfd7a4d0305abff22602ef6a26a1f4ac777d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "WatcherWhale",
+        "repo": "gogl-ci",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -75,6 +95,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "gogl-ci": "gogl-ci",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgsstable": "nixpkgsstable",
