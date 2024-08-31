@@ -13,6 +13,7 @@
     kubectl
     kubeswitch
     kubernetes-helm
+    fluxcd
 
     terraform
 
