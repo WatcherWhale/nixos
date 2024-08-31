@@ -9,8 +9,6 @@ tasks:
     cmds:
       - nix flake update
       - nix flake archive
-      - task: host
-      - task: home
 
   home:
     cmds:
