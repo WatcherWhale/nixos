@@ -4,13 +4,13 @@
     "${self}/modules/extra/allowUnfree.nix"
 
     ./autorandr.nix
-    ./shell.nix
     ./theming.nix
     ./dunst.nix
-    ./browser.nix
     ./devops.nix
 
-    ./mpv.nix
+    ./shell
+    ./browser
+    ./mpv
     ./lf
     ./ranger
   ];
