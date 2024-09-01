@@ -9,6 +9,8 @@
     ./dunst.nix
     ./browser.nix
     ./devops.nix
+
+    ./mpv.nix
   ];
 
   # automatic garbace collection
