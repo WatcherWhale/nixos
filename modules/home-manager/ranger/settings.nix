@@ -26,7 +26,7 @@
   preview_files = true;
   preview_directories = true;
   collapse_preview = true;
-  wrap_plaintext_previews = true;
+  wrap_plaintext_previews = false;
 
   status_bar_on_top = false;
   draw_progress_bar_in_status_bar = true;
