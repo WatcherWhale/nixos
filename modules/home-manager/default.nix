@@ -35,7 +35,6 @@
   home.packages = with pkgs; [
     eza
     stow
-    zellij
     rofi
     zoxide
     nitrogen
