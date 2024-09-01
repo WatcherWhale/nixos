@@ -23,16 +23,10 @@
             inherit stablePkgs;
           };
           modules = [
-            # Allow Unfree packages
-            ./modules/extra/allowUnfree.nix
-
-            # Load disk config
             disko.nixosModules.disko
-            ./hosts/whaleshark/disko.nix
 
             # System config
-            ./modules/system/default.nix
-            ./hosts/whaleshark/configuration.nix
+            ./hosts/whaleshark
 
             # Create users
             ./homes/watcherwhale/user.nix
@@ -50,7 +44,6 @@
             inherit stablePkgs;
           };
           modules = [
-            ./modules/extra/allowUnfree.nix
             ./homes/watcherwhale/home.nix
           ];
         };
@@ -62,7 +55,6 @@
             inherit stablePkgs;
           };
           modules = [
-            ./modules/extra/allowUnfree.nix
             ./homes/work/home.nix
           ];
         };

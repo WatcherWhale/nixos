@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
   imports = [
+    "${self}/modules/extra/allowUnfree.nix"
+
     ./autorandr.nix
     ./shell.nix
     ./theming.nix

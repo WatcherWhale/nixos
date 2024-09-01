@@ -17,7 +17,7 @@ tasks:
   home:
     cmds:
       - task: add-files
-      - home-manager switch --flake .
+      - home-manager switch --impure --flake .
 
   host:
     cmds:

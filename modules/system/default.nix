@@ -1,11 +1,13 @@
 {
-  config,
+  self,
   lib,
   pkgs,
   ...
 }:
 {
   imports = [
+    "${self}/modules/extra/allowUnfree.nix"
+
     ./packages.nix
     ./xserver.nix
     ./sound.nix

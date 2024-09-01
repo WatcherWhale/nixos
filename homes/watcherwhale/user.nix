@@ -13,6 +13,7 @@
       "input"
       "kvm"
       "games"
+      "gamemode"
     ];
   };
 }

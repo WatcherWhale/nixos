@@ -1,7 +1,10 @@
 { self, pkgs, ... }:
 {
   imports = [
+    ./disko.nix
     ./hardware-configuration.nix
+
+    "${self}/modules/system"
 
     "${self}/modules/programs/steam.nix"
     "${self}/modules/programs/sunshine"
