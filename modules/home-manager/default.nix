@@ -13,7 +13,21 @@
     ./mpv
     ./lf
     ./ranger
+    ./qtile
   ];
+
+  custom.programs.qtile.enable = true;
+  custom.programs.qtile.autostart_always = pkgs.writeShellScriptBin "autostart_always" ''
+    sh -c '~/.scripts/notifications' &
+    sh -c '~/.scripts/picom.sh' &
+    sh -c '~/.scripts/xob/start.sh' &
+    setxkbmap -option caps:escape &
+    nitrogen --restore &
+    #betterlockscreen -w &
+    sh -c '~/.scripts/wacom' &
+
+    betterlockscreen -u ~/Nextcloud/Pictures/Posters/bw-whaleshark.jpg &
+  '';
 
   # automatic garbace collection
   nix.gc = {

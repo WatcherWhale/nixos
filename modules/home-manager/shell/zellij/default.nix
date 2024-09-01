@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./config.nix
@@ -8,5 +8,7 @@
 
   home.packages = with pkgs; [
     zellij
+
+    inputs.zellij-store.packages.${system}.default
   ];
 }

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#$HOME/Projects/styli.sh/styli.sh -w 3840 -h 2160 &
+sh -c '~/.scripts/notifications' &
+sh -c '~/.scripts/picom.sh' &
+sh -c '~/.scripts/xob/start.sh' &
+setxkbmap -option caps:escape &
+nitrogen --restore &
+#betterlockscreen -w &
+sh -c '~/.scripts/wacom' &
+
+betterlockscreen -u ~/Nextcloud/Pictures/Posters/bw-whaleshark.jpg &
