@@ -26,6 +26,7 @@
     trivy
 
     delta
+    gibo
 
     go
     golangci-lint

@@ -14,7 +14,7 @@ in
 
       installDir = lib.mkOption {
         description = ''The installation directory.'';
-        type = lib.types.string;
+        type = lib.types.str;
         default = "qtile";
       };
 
