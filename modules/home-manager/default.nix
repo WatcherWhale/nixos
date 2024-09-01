@@ -12,6 +12,7 @@
 
     ./mpv.nix
     ./lf
+    ./ranger
   ];
 
   # automatic garbace collection
@@ -37,7 +38,6 @@
     zellij
     rofi
     zoxide
-    ranger
     nitrogen
     bat
     thunderbird
