@@ -11,6 +11,7 @@
     ./devops.nix
 
     ./mpv.nix
+    ./lf
   ];
 
   # automatic garbace collection
