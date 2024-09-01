@@ -8,6 +8,10 @@ tasks:
   update:
     cmds:
       - nix flake update
+      - task: archive
+
+  archive:
+    cmds:
       - nix flake archive
 
   home:
