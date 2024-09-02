@@ -45,6 +45,8 @@
 
     mqtt-explorer
     dbeaver-bin
+    mongodb-compass
+
     nil
   ];
 }
