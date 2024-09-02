@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ self, pkgs, config, ... }:
 {
   imports = [
     "${self}/modules/extra/allowUnfree.nix"
@@ -8,6 +8,9 @@
     ./dunst.nix
     ./devops.nix
 
+    ./picom.nix
+    ./lockscreen.nix
+
     ./shell
     ./browser
     ./mpv
@@ -16,15 +19,23 @@
     ./qtile
   ];
 
+  home.keyboard = {
+    options = [
+      "caps:escape"
+    ];
+  };
+
+  lockscreen.wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/whaleshark.jpg";
+
   custom.programs.qtile.enable = true;
   custom.programs.qtile.autostart_always = pkgs.writeShellScriptBin "autostart_always" ''
-    sh -c '~/.scripts/notifications' &
-    sh -c '~/.scripts/picom.sh' &
+    # sh -c '~/.scripts/notifications' &
+    #sh -c '~/.scripts/picom.sh' &
     sh -c '~/.scripts/xob/start.sh' &
-    setxkbmap -option caps:escape &
+    #setxkbmap -option caps:escape &
     nitrogen --restore &
     #betterlockscreen -w &
-    sh -c '~/.scripts/wacom' &
+    #sh -c '~/.scripts/wacom' &
 
     betterlockscreen -u ~/Nextcloud/Pictures/Posters/bw-whaleshark.jpg &
   '';

@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 let
+  homeDir = config.home.homeDirectory;
   fileName = "whale-compact.kdl";
-  homeDir = builtins.getEnv "HOME";
 in
 {
   xdg.configFile."zellij/layouts/${fileName}".text = ''

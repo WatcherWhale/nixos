@@ -24,7 +24,7 @@ home = os.path.expanduser("~")
 @hook.subscribe.startup_once
 def autostart_once():
     path = home + "/.config/qtile"
-    subprocess.call([path + "/autostart_" + getpass.getuser()])
+    subprocess.call([path + "/autostart"])
 
 @hook.subscribe.startup
 def autostart_always():

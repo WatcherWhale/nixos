@@ -14,6 +14,7 @@
       "kvm"
       "games"
       "gamemode"
+      "docker"
     ];
   };
 }

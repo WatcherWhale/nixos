@@ -12,6 +12,7 @@
       "disk"
       "input"
       "kvm"
+      "docker"
     ];
   };
 }

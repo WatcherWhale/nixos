@@ -1,6 +1,6 @@
-{ ... }:
+{ config, ... }:
 let
-  homeDir = builtins.getEnv "HOME";
+  homeDir = config.home.homeDirectory;
 in
 {
   xdg.configFile."zellij/config.kdl".text = # kdl

@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 let
+  homeDir = config.home.homeDirectory;
   fileName = "k9s.kdl";
-  homeDir = builtins.getEnv "HOME";
 in
 {
   xdg.configFile."zellij/layouts/${fileName}".text = ''
