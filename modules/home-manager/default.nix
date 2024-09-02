@@ -47,6 +47,8 @@
   };
 
   home.packages = with pkgs; [
+    dig
+    doggo
     eza
     stow
     rofi
