@@ -6,7 +6,7 @@ in
   options.lockscreen = {
     wallpaper = lib.mkOption {
       type = lib.types.str;
-      default = "~/Pictures/Wallpaper.png";
+      default = "${config.home.homeDirectory}/Pictures/Wallpaper.png";
     };
     effect = lib.mkOption {
       type = lib.types.str;
