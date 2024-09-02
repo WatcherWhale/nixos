@@ -11,7 +11,7 @@ in
         }
         pane size=1 borderless=true {
             //plugin location="zellij:tab-bar"
-            plugin location="file:/home/watcherwhale/.config/zellij/plugins/zjstatus.wasm" {
+            plugin location="file:${homeDir}/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "#[bg=#3b4252]{tabs}"
                 format_center ""
                 format_right  "#[bg=#3b4252]{mode}"
