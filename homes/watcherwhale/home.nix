@@ -38,6 +38,7 @@ in
     gio launch "$HOME/.local/share/applications/youtube-music.desktop" &
 
     steam -silent $USER &
+    systemctl --user start sunshine &
   '';
 
   home.packages = with pkgs; [

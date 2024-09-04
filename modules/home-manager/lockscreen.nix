@@ -27,8 +27,7 @@ in
     systemd.user.services.betterlockscreen-update = {
       Unit = {
         Description = "Update the wallpaper of the lockscreen";
-        After = [ "graphical-session-pre.target" ];
-        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
       };
       Service = {
         ExecStart = "${pkgs.betterlockscreen}/bin/betterlockscreen -u \"${cfg.wallpaper}\"";
