@@ -42,7 +42,6 @@ in
   '';
 
   home.packages = with pkgs; [
-    modrinth-app
   ];
 
   home.stateVersion = "24.05";
