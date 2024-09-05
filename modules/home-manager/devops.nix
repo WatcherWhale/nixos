@@ -48,5 +48,7 @@
     mongodb-compass
 
     nil
+
+    yq-go
   ];
 }
