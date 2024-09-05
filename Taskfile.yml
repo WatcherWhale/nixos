@@ -26,6 +26,7 @@ tasks:
 
   add-files:
     silent: true
+    ignore_error: true
     cmds:
       - |
         cd files
