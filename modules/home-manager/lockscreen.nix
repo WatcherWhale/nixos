@@ -12,6 +12,10 @@ in
       type = lib.types.str;
       default = "dim";
     };
+    autorandr.hook = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+    };
   };
 
   config = {
@@ -24,15 +28,6 @@ in
       inactiveInterval = 10;
     };
 
-    systemd.user.services.betterlockscreen-update = {
-      Unit = {
-        Description = "Update the wallpaper of the lockscreen";
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        ExecStart = "${pkgs.betterlockscreen}/bin/betterlockscreen -u \"${cfg.wallpaper}\"";
-      };
-      Install = { WantedBy = [ "graphical-session.target" ]; };
-    };
+    programs.autorandr.hooks.postswitch."betterlockscreen-update" = lib.mkIf cfg.autorandr.hook "${pkgs.betterlockscreen}/bin/betterlockscreen -u \"${cfg.wallpaper}\"";
   };
 }
