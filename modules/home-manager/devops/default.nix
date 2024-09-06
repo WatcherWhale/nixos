@@ -1,4 +1,5 @@
 {
+  self,
   pkgs,
   stablePkgs,
   inputs,
@@ -6,15 +7,11 @@
 }:
 {
   imports = [
-    ../programs/azure-cli.nix
+    "${self}/modules/programs/azure-cli.nix"
+    ./kubernetes.nix
   ];
-  home.packages = with pkgs; [
-    k9s
-    kubectl
-    kubeswitch
-    kubernetes-helm
-    fluxcd
 
+  home.packages = with pkgs; [
     terraform
 
     crane
@@ -35,8 +32,6 @@
     python3
     python3Packages.pip
     nodejs_20
-
-    kubelogin
 
     inputs.gogl-ci.packages.${system}.default
 

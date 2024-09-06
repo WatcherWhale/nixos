@@ -1,4 +1,9 @@
-{ self, pkgs, config, ... }:
+{
+  self,
+  pkgs,
+  config,
+  ...
+}:
 {
   imports = [
     "${self}/modules/extra/allowUnfree.nix"
@@ -6,7 +11,7 @@
     ./autorandr.nix
     ./theming.nix
     ./dunst.nix
-    ./devops.nix
+    ./devops
 
     ./picom.nix
     ./lockscreen.nix
