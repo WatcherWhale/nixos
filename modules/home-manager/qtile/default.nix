@@ -32,7 +32,12 @@ in
     };
   };
 
+  imports = [
+    ./scripts.nix
+  ];
+
   config = lib.mkIf cfg.enable {
+
     xdg.configFile."${cfg.installDir}/screens".source = ./config/screens;
     xdg.configFile."${cfg.installDir}/settings".source = ./config/settings;
     xdg.configFile."${cfg.installDir}/themes".source = ./config/themes;

@@ -132,7 +132,7 @@ keys = [
 
     Key([mod, "shift"], "r", lazy.spawn("qtile cmd-obj -o cmd -f reload_config"), desc="Restart Qtile"),
     #Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod, "shift"], "e", lazy.spawn(home + "/.scripts/exit-options-qtile")),
+    Key([mod, "shift"], "e", lazy.spawn("exit-options-qtile")),
     Key(["control", "mod1"], "l", lazy.spawn("lock")),
 
     Key([mod], "f", lazy.window.toggle_fullscreen()),

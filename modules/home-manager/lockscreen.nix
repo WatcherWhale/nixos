@@ -13,10 +13,12 @@ in
       type = lib.types.str;
       default = "${config.home.homeDirectory}/Pictures/Wallpaper.png";
     };
+
     effect = lib.mkOption {
       type = lib.types.str;
       default = "dim";
     };
+
     autorandr.hook = lib.mkOption {
       type = lib.types.bool;
       default = true;
@@ -24,6 +26,12 @@ in
   };
 
   config = {
+    home.packages = [
+      (pkgs.writeShellScriptBin "lock" ''
+        ${pkgs.betterlockscreen}/bin/betterlockscreen -l ${cfg.effect}
+      '')
+    ];
+
     services.betterlockscreen = {
       enable = true;
       arguments = [
