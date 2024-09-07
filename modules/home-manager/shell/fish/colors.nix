@@ -7,7 +7,7 @@
   set -U fish_color_error red --bold
   set -U fish_color_end cyan
   set -U fish_color_redirection magenta
-  set -U fish_color_param white
+  set -U fish_color_param cyan
   set -U fish_color_selection white --bold --background=brblack
   set -U fish_color_search_match bryellow --background=brblack
   set -U fish_color_history_current --bold
