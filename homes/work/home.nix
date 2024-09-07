@@ -35,7 +35,7 @@ in
     gio launch "$HOME/.nix-profile/share/applications/youtube-music.desktop" &
 
     # Teams
-    gio launch "$HOME/.local/share/applications/teams.desktop" &
+    gio launch "$HOME/.nix-profile/share/applications/teams.desktop" &
 
     thunderbird &
   '';
