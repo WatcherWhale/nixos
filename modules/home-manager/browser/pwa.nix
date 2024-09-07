@@ -1,14 +1,26 @@
 { pkgs, ... }:
 {
-  home.file.".local/share/youtube-music.desktop".text = ''
-    #!/usr/bin/env xdg-open
-    [Desktop Entry]
-    Version=1.0
-    Terminal=false
-    Type=Application
-    Name=YouTube Music
-    Exec=${pkgs.brave}/opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=cinhimbnkkaeohfgghhklpknlkffjgod
-    Icon=brave-cinhimbnkkaeohfgghhklpknlkffjgod-Default
-    StartupWMClass=crx_cinhimbnkkaeohfgghhklpknlkffjgod
-  '';
+  xdg.desktopEntries."youtube-music" = let id = "cinhimbnkkaeohfgghhklpknlkffjgod"; in {
+    exec = "${pkgs.brave}/opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=${id}";
+    type = "Application";
+    terminal = false;
+    name = "YouTube Music";
+    icon = "brave-${id}-Default";
+  };
+
+  xdg.desktopEntries."teams" = let id = "cifhbcnohmdccbgoicgdjpfamggdegmo"; in {
+    exec = "${pkgs.brave}/opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=${id}";
+    type = "Application";
+    terminal = false;
+    name = "Microsoft Teams";
+    icon = "brave-${id}-Default";
+  };
+
+  xdg.desktopEntries."whatsapp" = let id = "hnpfjngllnobngcgfapefoaidbinmjnm"; in {
+    exec = "${pkgs.brave}/opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=${id}";
+    type = "Application";
+    terminal = false;
+    name = "WhatsApp";
+    icon = "brave-${id}-Default";
+  };
 }

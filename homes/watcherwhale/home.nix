@@ -35,7 +35,7 @@ in
     ${pkgs.zellij}/zellij delete-all-sessions -y &
 
     # YT-Music
-    gio launch "$HOME/.local/share/applications/youtube-music.desktop" &
+    gio launch "$HOME/.nix-profile/share/applications/youtube-music.desktop" &
 
     steam -silent $USER &
     systemctl --user start sunshine &
