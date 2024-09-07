@@ -2,6 +2,7 @@
 {
   imports = [
     ./firefox.nix
+    ./pwa.nix
   ];
 
   home.packages = with pkgs; [
