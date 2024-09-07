@@ -3,8 +3,9 @@
   imports = [
     ./alacritty.nix
     ./direnv.nix
-    ./fish.nix
+    ./fish
     ./starship.nix
     ./zellij
+    ./dircolors.nix
   ];
 }
