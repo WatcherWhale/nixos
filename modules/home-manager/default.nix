@@ -11,11 +11,12 @@
     ./autorandr.nix
     ./theming.nix
     ./dunst.nix
-    ./devops
+    ./zathura.nix
 
     ./picom.nix
     ./lockscreen.nix
 
+    ./devops
     ./shell
     ./browser
     ./mpv
