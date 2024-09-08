@@ -24,6 +24,8 @@
     ./ranger
     ./qtile
     ./nvim
+
+    ./flameshot.nix
   ];
 
   home.keyboard = {
@@ -84,11 +86,9 @@
     fd
     yt-dlp
     devour
-    nixfmt-rfc-style
   ];
 
   services.unclutter.enable = true;
-  services.flameshot.enable = true;
   services.redshift = {
     enable = true;
 

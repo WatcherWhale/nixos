@@ -28,7 +28,11 @@ local servers = {
     lua_ls = {},
     dockerls = {},
     golangci_lint_ls = {},
-    nixd = {},
+    nixd = {
+        formatting = {
+            command = { "nixfmt" },
+        },
+    },
     -- nil_ls = {
     --     formatting = {
     --         command = { "nixfmt" },
