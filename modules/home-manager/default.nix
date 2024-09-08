@@ -26,6 +26,7 @@
     ./nvim
 
     ./flameshot.nix
+    ./xob
   ];
 
   home.keyboard = {
