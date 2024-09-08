@@ -49,4 +49,3 @@ require("gitsigns").setup({
 require("oil").setup({})
 require("neogit").setup({})
 require("Comment").setup({})
-require("lazydev").setup({})
