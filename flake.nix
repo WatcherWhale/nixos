@@ -45,7 +45,6 @@
           };
           modules = [
             ./homes/watcherwhale/home.nix
-            ./modules/nvim
           ];
         };
         work = home-manager.lib.homeManagerConfiguration {

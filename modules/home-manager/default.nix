@@ -23,6 +23,7 @@
     ./lf
     ./ranger
     ./qtile
+    ./nvim
   ];
 
   home.keyboard = {
