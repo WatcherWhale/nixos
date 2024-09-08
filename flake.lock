@@ -92,6 +92,23 @@
         "type": "github"
       }
     },
+    "nvim": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-Ovd8bqc22fLqTCNzOrXTvgRsphd+k/VP0pbKR5SWPuI=",
+        "path": "./modules/nvim",
+        "type": "path"
+      },
+      "original": {
+        "path": "./modules/nvim",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -99,6 +116,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgsstable": "nixpkgsstable",
+        "nvim": "nvim",
         "zellij-store": "zellij-store",
         "zen-browser": "zen-browser"
       }
