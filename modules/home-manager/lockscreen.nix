@@ -41,6 +41,6 @@ in
       inactiveInterval = 10;
     };
 
-    programs.autorandr.hooks.postswitch."betterlockscreen-update" = lib.mkIf cfg.autorandr.hook "${pkgs.betterlockscreen}/bin/betterlockscreen -u \"${cfg.wallpaper}\"";
+    programs.autorandr.hooks.postswitch."betterlockscreen-update" = lib.mkIf cfg.autorandr.hook "${pkgs.betterlockscreen}/bin/betterlockscreen -u \"${cfg.wallpaper}\" &";
   };
 }
