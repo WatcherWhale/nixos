@@ -7,9 +7,6 @@ local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local conf = require("telescope.config").values
 
-local create_worktree = function()
-    require('telescope').extensions.git_worktree.create_git_worktree()
-end
 
 vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = "Resume previous telescope search" })
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
@@ -22,8 +19,6 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
-vim.keymap.set('n', '<leader>fw', require('telescope').extensions.git_worktree.git_worktrees, {})
-vim.keymap.set('n', '<leader>fa', create_worktree, {})
 vim.api.nvim_set_keymap("n", "<leader>fv", ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true })
 --vim.keymap.set('n', '<leader>u', "<cmd>Telescope undo<cr>")
@@ -111,36 +106,11 @@ require("telescope").setup {
                 },
             }
         },
-        git_worktree = {
-            theme = "ivy",
-            path_display = { "shorten" },
-            items = {
-                { "branch" },
-                { "sha" }
-            },
-            mappings = {
-                ["i"] = {
-                    ["<C-a>"] = create_worktree,
-                    ["<C-d>"] = require("telescope").extensions.git_worktree.actions.delete_worktree,
-                    ["<C-f>"] = require("telescope").extensions.git_worktree.actions.toggle_forced_deletion,
-                },
-                ["n"] = {
-                    ["<C-a>"] = create_worktree,
-                    ["<C-d>"] = require("telescope").extensions.git_worktree.actions.delete_worktree,
-                    ["<C-f>"] = require("telescope").extensions.git_worktree.actions.toggle_forced_deletion,
-                }
-            }
-        },
-        --undo = {
-        --    theme = "ivy",
-        --}
     }
 }
 
 --pcall(require('telescope').load_extension, 'fzf')
 
---require('git-worktree').setup({})
---require('telescope').load_extension('git_worktree')
 --require('telescope').load_extension('file_browser')
 --require('telescope').load_extension('undo')
 
@@ -170,27 +140,6 @@ nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]ef
 nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-
--- local Worktree = require("git-worktree")
--- Worktree.on_tree_change(function(op, metadata)
---     if op == Worktree.Operations.Switch then
---         print("Switched to " .. metadata.path)
---     end
---
---     if op == Worktree.Operations.Create then
---         if vim.fn.isdirectory(metadata.path .. "/.husky") then
---             vim.fn.jobstart("npx husky install", {
---                 cwd = metadata.path
---             })
---         end
---
---         if vim.fn.filereadable(metadata.path .. "/package.json") then
---             vim.fn.jobstart("npx husky install", {
---                 cwd = metadata.path
---             })
---         end
---     end
--- end)
 
 function run_command(cmd)
     local handle = io.popen(cmd)

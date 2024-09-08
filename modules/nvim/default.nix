@@ -15,6 +15,7 @@
 
     extraLuaConfig = # lua
       ''
+        require("configs/setup")
         require("configs/keybinds")
         require("configs/commands")
         require("configs/theming")
@@ -22,8 +23,6 @@
         require("configs/lsp")
         require("configs/treesitter")
         require("configs/cmp")
-        require("configs/settings")
-        require("configs/gen")
         require("configs/harpoon")
 
         -- Disable case sensitivity
@@ -103,6 +102,15 @@
 
       stay-centered-nvim
       comment-nvim
+
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      luasnip
+      cmp_luasnip
+      friendly-snippets
     ];
 
     extraPackages = with pkgs; [
