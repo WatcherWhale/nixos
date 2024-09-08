@@ -1,16 +1,7 @@
 {
   pkgs,
-  nvimInputs,
   ...
 }:
-let
-  toPlugin =
-    { name, plugin }:
-    pkgs.vimUtils.buildVimPlugin {
-      name = "${name}";
-      source = plugin;
-    };
-in
 {
   # Load all lua files
   xdg.configFile."nvim/lua".source = ./lua;
@@ -23,7 +14,37 @@ in
     vimdiffAlias = true;
 
     extraLuaConfig = # lua
-      '''';
+      ''
+        require("configs/keybinds")
+        require("configs/commands")
+        require("configs/theming")
+        require("configs/telescope")
+        require("configs/lsp")
+        require("configs/treesitter")
+        require("configs/cmp")
+        require("configs/settings")
+        require("configs/gen")
+        require("configs/harpoon")
+
+        -- Disable case sensitivity
+        vim.o.ignorecase = true
+        -- Enable case sensitivity if search contains uppercase
+        vim.o.smartcase = true
+
+
+        -- Share Clipboard
+        vim.opt.clipboard = 'unnamedplus'
+
+
+        -- Set Tabs to 4 spaces
+        vim.o.tabstop = 4
+        vim.o.expandtab = true
+        vim.o.softtabstop = 4
+        vim.o.shiftwidth = 4
+
+        -- Disable Mouse Actions
+        vim.o.mouse = ""
+      '';
 
     plugins = with pkgs.vimPlugins; [
       # Utils
@@ -82,12 +103,18 @@ in
 
       stay-centered-nvim
       comment-nvim
-
-      toPlugin {name = "git-worktree-nvim"; plugin = nvimInputs.git-worktree-nvim; }
     ];
 
     extraPackages = with pkgs; [
       jdt-language-server
+      gopls
+      yaml-language-server
+      helm-ls
+      terraform-ls
+      nodePackages_latest.vscode-json-languageserver
+      bash-language-server
+      lua-language-server
+      nil
     ];
   };
 }

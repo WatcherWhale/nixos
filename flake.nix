@@ -7,7 +7,6 @@
       nixpkgs,
       home-manager,
       disko,
-      nvim,
       ...
     }@inputs:
     let
@@ -46,7 +45,7 @@
           };
           modules = [
             ./homes/watcherwhale/home.nix
-            nvim.nixosModules.nvim
+            ./modules/nvim
           ];
         };
         work = home-manager.lib.homeManagerConfiguration {
@@ -89,11 +88,5 @@
       url = "github:MarceColl/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvim = {
-      url = "git+file:.?dir=modules/ncim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-
 }
