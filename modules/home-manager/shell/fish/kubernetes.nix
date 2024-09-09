@@ -29,18 +29,16 @@
 
       zellij_k9s = # fish
         ''
-          function zellij_k9s
-              if ! test -e $K8S_STICKY_FILE
-                  if ! test -e $KUBECONFIG || [ "$KUBECONFIG" = "" ]
-                      kubeswitch
-                      zellij-store store KUBECONFIG
-                  end
+          if ! test -e $K8S_STICKY_FILE
+              if ! test -e $KUBECONFIG || [ "$KUBECONFIG" = "" ]
+                  kubeswitch
+                  zellij-store store KUBECONFIG
               end
-
-              zellij action rename-tab "$(kubectl config current-context)" &
-
-              k9s
           end
+
+          zellij action rename-tab "$(kubectl config current-context)" &
+
+          k9s
         '';
     };
 
