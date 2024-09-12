@@ -33,19 +33,8 @@ local servers = {
             command = { "nixfmt" },
         },
     },
-    -- nil_ls = {
-    --     formatting = {
-    --         command = { "nixfmt" },
-    --     },
-    --     settings = {
-    --         nix = {
-    --             flake = {
-    --                 autoArchive = true
-    --             }
-    --         }
-    --     }
-    -- },
     jqls = {},
+    ts_ls = {},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

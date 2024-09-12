@@ -1,4 +1,4 @@
-{ ... }@inputs:
+{ pkgs, ... }@inputs:
 {
   imports = [
     ./kubernetes.nix
@@ -14,7 +14,7 @@
   programs.fzf = {
     enable = true;
 
-    enableFishIntegration = true;
+    enableFishIntegration = false;
 
     defaultOptions = [
       "--height 40%"
@@ -40,6 +40,8 @@
   programs.fish = {
     enable = true;
 
+    plugins = [ ];
+
     shellInit = # fish
       ''
         fish_vi_key_bindings
@@ -55,8 +57,11 @@
 
         ${import ./colors.nix inputs}
 
+        bind -M insert \ec fzf-change-dir
         bind \ce edit_command_buffer
+        bind -M insert \ce edit_command_buffer
         bind \cr ranger
+        bind -M insert \cr ranger
       '';
 
     shellInitLast = # fish
@@ -94,6 +99,22 @@
           git switch $(git branch --all | tr -d "* " | sed -e "s/remotes\/origin\///g" | sort | uniq | grep -v "HEAD->" | fzf $ARGS)
         '';
       "s" = "kubeswitch $argv;";
+      "fzf-change-dir" = # fish
+        ''
+          fzf --walker=dir,follow,hidden --scheme=path --walker-root="." | read -l result
+          if [ -n "$result" ]
+            cd $result
+          end
+          commandline -f repaint
+        '';
+    };
+
+    shellAbbrs = {
+      pushmr = "git push -o merge_request.create";
+      push = "git push";
+      pull = "git pull";
+      gsc = "git switch -c";
+      gf = "git fetch";
     };
 
     shellAliases = {
@@ -140,17 +161,10 @@
 
       # Git
       g = "git";
-      push = "git push";
-      pushall = "git pushall";
-      commit = "git commit";
-      pull = "git pull";
       master = "git switch master";
       ch = "git-change";
-      gs = "git switch";
-      gsc = "git switch -c";
       ghome = "cd (git rev-parse --show-toplevel)";
       gh = "cd (git rev-parse --show-toplevel)";
-      gf = "git fetch";
     };
 
   };

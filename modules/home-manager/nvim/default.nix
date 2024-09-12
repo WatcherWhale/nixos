@@ -99,6 +99,7 @@
       dockerfile-language-server-nodejs
       docker-compose-language-service
       jq-lsp
+      typescript-language-server
     ];
   };
 }
