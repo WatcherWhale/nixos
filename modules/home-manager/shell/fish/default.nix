@@ -60,8 +60,8 @@
         bind -M insert \ec fzf-change-dir
         bind \ce edit_command_buffer
         bind -M insert \ce edit_command_buffer
-        bind \cr ranger
-        bind -M insert \cr ranger
+        #bind \cr ranger
+        #bind -M insert \cr ranger
       '';
 
     shellInitLast = # fish
