@@ -46,4 +46,6 @@
 
     yq-go
   ];
+
+  programs.fish.completions.docker = pkgs.docker;
 }

@@ -2,6 +2,7 @@
 {
   imports = [
     ./kubernetes.nix
+    ./completions.nix
   ];
 
   programs.zoxide = {
@@ -110,11 +111,16 @@
     };
 
     shellAbbrs = {
+      g = "git";
       pushmr = "git push -o merge_request.create";
       push = "git push";
       pull = "git pull";
       gsc = "git switch -c";
       gf = "git fetch";
+
+      d = "docker";
+      drit = "docker run --rm -it";
+      dr = "docker run --rm";
     };
 
     shellAliases = {
@@ -147,9 +153,6 @@
       ap = "ansible-playbook";
 
       # Docker
-      d = "docker";
-      drit = "docker run --rm -it";
-      dr = "docker run --rm";
       dfimage = "docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage";
 
       ssh = "env TERM=xterm-256color ssh";
@@ -160,11 +163,14 @@
       ytmp3 = "yt-dlp -f bestaudio -x --sponsorblock-remove all --audio-format mp3 --embed-thumbnail --add-metadata -i -o \"%(autonumber)s %(title)s.%(ext)s\"";
 
       # Git
-      g = "git";
       master = "git switch master";
       ch = "git-change";
       ghome = "cd (git rev-parse --show-toplevel)";
       gh = "cd (git rev-parse --show-toplevel)";
+    };
+
+    completions = {
+      nix = pkgs.nix;
     };
 
   };
