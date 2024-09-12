@@ -17,12 +17,12 @@ tasks:
   home:
     cmds:
       - task: add-files
-      - home-manager switch --impure --flake .
+      - nh home switch . -- --impure
 
   host:
     cmds:
       - task: add-files
-      - sudo nixos-rebuild switch --flake .
+      - nh os switch --flake .
 
   add-files:
     silent: true
