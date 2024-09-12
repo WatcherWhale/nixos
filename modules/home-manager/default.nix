@@ -68,6 +68,7 @@
   };
 
   home.packages = with pkgs; [
+    nh
     dig
     doggo
     eza
