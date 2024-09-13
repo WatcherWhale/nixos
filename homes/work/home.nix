@@ -12,6 +12,7 @@ in
 {
   imports = [
     "${self}/modules/home-manager"
+    "${self}/modules/programs/intellij.nix"
   ];
 
   home.username = user;
