@@ -22,7 +22,7 @@ tasks:
   host:
     cmds:
       - task: add-files
-      - nh os switch --flake .
+      - nh os switch .
 
   add-files:
     silent: true
