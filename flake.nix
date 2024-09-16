@@ -5,6 +5,7 @@
     {
       self,
       nixpkgs,
+      nixos-hardware,
       home-manager,
       disko,
       ...
@@ -31,6 +32,42 @@
             # Create users
             ./homes/watcherwhale/user.nix
             ./homes/work/user.nix
+          ];
+        };
+
+        bluewhale = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [
+            disko.nixosModules.disko
+
+            # System config
+            ./hosts/bluewhale
+
+            # Create users
+            ./homes/watcherwhale/user.nix
+            ./homes/work/user.nix
+          ];
+        };
+
+        hammerhead = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [
+            nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
+            disko.nixosModules.disko
+
+            # System config
+            ./hosts/hammerhead
+
+            # Create users
+            ./homes/watcherwhale/user.nix
           ];
         };
       };
@@ -64,6 +101,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgsstable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";

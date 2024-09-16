@@ -13,7 +13,12 @@
     "${self}/modules/programs/flatpak.nix"
   ];
 
-  networking.hostName = "whaleshark";
+  networking.hostName = "hammerhead";
+
+  services.xserver = {
+    xkb.layout = "be";
+    xkbVariant = "nodeadkeys";
+  };
 
   # DO NOT TOUCH
   system.stateVersion = "24.05";

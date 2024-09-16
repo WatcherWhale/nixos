@@ -1,0 +1,6 @@
+{ ... }:
+{
+  programs.autorandr = {
+    profiles = { };
+  };
+}
