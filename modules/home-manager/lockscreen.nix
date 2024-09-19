@@ -32,6 +32,8 @@ in
       '')
     ];
 
+    services.screen-locker.xautolock.enable = false;
+
     services.betterlockscreen = {
       enable = true;
       arguments = [
