@@ -13,7 +13,6 @@ in
   imports = [
     "${self}/modules/home-manager"
     "${self}/modules/programs/intellij.nix"
-    "${self}/modules/programs/ftb-app"
   ];
 
   home.username = user;
