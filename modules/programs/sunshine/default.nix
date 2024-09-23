@@ -1,8 +1,6 @@
 { ... }:
 {
-  imports = [
-    ./sunshine.nix
-  ];
+  imports = [ ./sunshine.nix ];
 
   programs.sunshine.enable = true;
 }

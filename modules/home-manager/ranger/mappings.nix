@@ -107,8 +107,8 @@
   "=" = "chmod";
   "cw" = "console rename%space";
   "a" = "rename_append";
-  "A" = "eval fm.open_console('rename ' + fm.thisfile.relative_path.replace(\"%\", \"%%\"))";
-  "I" = "eval fm.open_console('rename ' + fm.thisfile.relative_path.replace(\"%\", \"%%\"), position=7)";
+  "A" = ''eval fm.open_console('rename ' + fm.thisfile.relative_path.replace("%", "%%"))'';
+  "I" = ''eval fm.open_console('rename ' + fm.thisfile.relative_path.replace("%", "%%"), position=7)'';
   "pp" = "paste";
   "po" = "paste overwrite=True";
   "pP" = "paste append=True";

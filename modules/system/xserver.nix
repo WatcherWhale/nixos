@@ -10,10 +10,7 @@
 
     windowManager.qtile = {
       enable = true;
-      extraPackages =
-        python3Packages: with python3Packages; [
-          pyautogui
-        ];
+      extraPackages = python3Packages: with python3Packages; [ pyautogui ];
     };
 
     xkb = {

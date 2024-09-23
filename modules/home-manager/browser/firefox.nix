@@ -61,7 +61,11 @@
         ];
         engines = {
           "Brave" = {
-            urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
+            urls = [
+              {
+                template = "https://search.brave.com/search?q={searchTerms}";
+              }
+            ];
           };
           "Bing".metaData.hidden = true;
           "Nix Packages" = {

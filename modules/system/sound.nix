@@ -5,9 +5,7 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    alsa-utils
-  ];
+  environment.systemPackages = with pkgs; [ alsa-utils ];
 
   security.rtkit.enable = true;
   services.pipewire = {

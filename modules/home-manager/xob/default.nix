@@ -1,8 +1,6 @@
 { config, lib, ... }:
 {
-  imports = [
-    ./style.nix
-  ];
+  imports = [ ./style.nix ];
   options.programs.xob = {
     enable = lib.mkOption {
       type = lib.types.bool;

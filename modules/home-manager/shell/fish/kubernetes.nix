@@ -16,7 +16,7 @@
         '';
 
       unsticky = # fish
-        ''rm $K8S_STICKY_FILE'';
+        "rm $K8S_STICKY_FILE";
 
       sticky_k9s = # fish
         ''

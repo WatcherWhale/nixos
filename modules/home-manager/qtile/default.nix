@@ -13,28 +13,26 @@ in
       enable = lib.mkEnableOption "qtile";
 
       installDir = lib.mkOption {
-        description = ''The installation directory.'';
+        description = "The installation directory.";
         type = lib.types.str;
         default = "qtile";
       };
 
       autostart = lib.mkOption {
-        description = ''The autostart file for the user.'';
+        description = "The autostart file for the user.";
         type = lib.types.package;
-        default = pkgs.writeShellScriptBin "autostart" '''';
+        default = pkgs.writeShellScriptBin "autostart" "";
       };
 
       autostart_always = lib.mkOption {
-        description = ''The autostart_always file for the user.'';
+        description = "The autostart_always file for the user.";
         type = lib.types.package;
-        default = pkgs.writeShellScriptBin "autostart_always" '''';
+        default = pkgs.writeShellScriptBin "autostart_always" "";
       };
     };
   };
 
-  imports = [
-    ./scripts.nix
-  ];
+  imports = [ ./scripts.nix ];
 
   config = lib.mkIf cfg.enable {
 

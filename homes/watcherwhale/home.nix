@@ -15,6 +15,7 @@ in
 
     "${self}/modules/programs/dungeondraft"
     "${self}/modules/programs/wonderdraft"
+    "${self}/modules/programs/ftb-app"
   ];
 
   home.username = user;
@@ -43,10 +44,7 @@ in
     systemctl --user start sunshine &
   '';
 
-  home.packages =
-    with pkgs;
-    [
-    ];
+  home.packages = with pkgs; [ ];
 
   home.stateVersion = "24.05";
 }

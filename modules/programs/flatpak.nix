@@ -4,9 +4,7 @@
     enable = true;
     config = {
       common = {
-        default = [
-          "gtk"
-        ];
+        default = [ "gtk" ];
       };
     };
   };

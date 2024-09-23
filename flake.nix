@@ -80,9 +80,7 @@
             inherit inputs;
             inherit stablePkgs;
           };
-          modules = [
-            ./homes/watcherwhale/home.nix
-          ];
+          modules = [ ./homes/watcherwhale/home.nix ];
         };
         work = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -91,9 +89,7 @@
             inherit inputs;
             inherit stablePkgs;
           };
-          modules = [
-            ./homes/work/home.nix
-          ];
+          modules = [ ./homes/work/home.nix ];
         };
       };
     };

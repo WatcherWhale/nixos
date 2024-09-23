@@ -53,7 +53,5 @@ let
   ];
 in
 {
-  home.packages = with pkgs; [
-    (azure-cli.withExtensions extensions)
-  ];
+  home.packages = with pkgs; [ (azure-cli.withExtensions extensions) ];
 }

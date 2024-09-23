@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   # Load all lua files
   xdg.configFile."nvim/lua".source = ./lua;

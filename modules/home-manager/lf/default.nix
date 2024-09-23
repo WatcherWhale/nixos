@@ -28,7 +28,7 @@ in
 
       commands = {
         dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x "$fx"'';
-        editor-open = ''$$EDITOR $f'';
+        editor-open = "$$EDITOR $f";
         mkdir = ''
           ''${{
             printf "Directory Name: "

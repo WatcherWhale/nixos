@@ -1,8 +1,6 @@
 { pkgs, lib, ... }@inputs:
 {
-  home.packages = with pkgs; [
-    ueberzug
-  ];
+  home.packages = with pkgs; [ ueberzug ];
 
   programs.ranger = {
     enable = true;

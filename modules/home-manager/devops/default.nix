@@ -45,6 +45,9 @@
     nil
 
     yq-go
+
+    maven
+    openjdk17
   ];
 
   programs.fish.completions.docker = pkgs.docker;

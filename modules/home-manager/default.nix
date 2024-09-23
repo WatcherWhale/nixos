@@ -3,7 +3,7 @@
   pkgs,
   config,
   ...
-}:
+}@inputs:
 {
   imports = [
     "${self}/modules/extra/allowUnfree.nix"
@@ -30,9 +30,7 @@
   ];
 
   home.keyboard = {
-    options = [
-      "caps:escape"
-    ];
+    options = [ "caps:escape" ];
   };
 
   lockscreen.wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/whaleshark.jpg";
@@ -125,8 +123,6 @@
 
   services.gnome-keyring = {
     enable = true;
-    components = [
-      "ssh"
-    ];
+    components = [ "ssh" ];
   };
 }

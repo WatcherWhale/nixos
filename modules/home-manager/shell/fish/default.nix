@@ -7,9 +7,7 @@
 
   programs.zoxide = {
     enable = true;
-    options = [
-      "--cmd cd"
-    ];
+    options = [ "--cmd cd" ];
   };
 
   programs.fzf = {
@@ -160,7 +158,7 @@
       venvactivate = "source ./.venv/bin/activate.fish";
       rm = "trash";
 
-      ytmp3 = "yt-dlp -f bestaudio -x --sponsorblock-remove all --audio-format mp3 --embed-thumbnail --add-metadata -i -o \"%(autonumber)s %(title)s.%(ext)s\"";
+      ytmp3 = ''yt-dlp -f bestaudio -x --sponsorblock-remove all --audio-format mp3 --embed-thumbnail --add-metadata -i -o "%(autonumber)s %(title)s.%(ext)s"'';
 
       # Git
       master = "git switch master";
