@@ -16,6 +16,8 @@
     ./picom.nix
     ./lockscreen.nix
 
+    ./git.nix
+
     ./devops
     ./shell
     ./browser
@@ -102,8 +104,6 @@
       night = 4500;
     };
   };
-
-  programs.git.enable = true;
 
   home.sessionPath = [
     "$HOME/.scripts"

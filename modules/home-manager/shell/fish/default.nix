@@ -90,6 +90,11 @@
           command ranger --choosedir=$HOME/.rangerdir $argv; set LASTDIR (cat $HOME/.rangerdir); cd "$LASTDIR"
         '';
 
+      "git-home" = # fish
+        ''
+          cd (git rev-parse --show-toplevel)
+        '';
+
       "git-change" = # fish
         ''
           if count $argv > /dev/null
@@ -163,8 +168,8 @@
       # Git
       master = "git switch master";
       ch = "git-change";
-      ghome = "cd (git rev-parse --show-toplevel)";
-      gh = "cd (git rev-parse --show-toplevel)";
+      ghome = "git-home";
+      gh = "git-home";
     };
 
     completions = {

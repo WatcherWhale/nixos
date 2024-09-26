@@ -20,6 +20,7 @@ in
 
   home.username = user;
   home.homeDirectory = homePath;
+  programs.git.useremail = "watcherwhale@maes.family";
 
   custom.programs.qtile.autostart = pkgs.writeShellScriptBin "autostart" ''
     ${zellij-store}/bin/zellij-store clean &

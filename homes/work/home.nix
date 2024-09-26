@@ -17,6 +17,7 @@ in
 
   home.username = user;
   home.homeDirectory = homePath;
+  programs.git.userEmail = "mathias.maes@aloxy.io";
 
   custom.programs.qtile.autostart = pkgs.writeShellScriptBin "autostart" ''
     ${zellij-store}/bin/zellij-store clean &
