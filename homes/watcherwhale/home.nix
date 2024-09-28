@@ -45,7 +45,7 @@ in
     systemctl --user start sunshine &
   '';
 
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [ modrinth-app ];
 
   home.stateVersion = "24.05";
 }
