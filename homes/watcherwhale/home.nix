@@ -40,9 +40,6 @@ in
     gio launch "$HOME/.nix-profile/share/applications/youtube-music.desktop" &
 
     steam -silent $USER &
-
-    sleep 6
-    systemctl --user start sunshine &
   '';
 
   home.packages = with pkgs; [ modrinth-app ];
