@@ -29,6 +29,9 @@
 
     ./flameshot.nix
     ./xob
+
+    ./gpg.nix
+    ./pass.nix
   ];
 
   home.keyboard = {
