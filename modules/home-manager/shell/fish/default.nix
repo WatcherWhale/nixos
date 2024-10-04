@@ -95,6 +95,17 @@
           cd (git rev-parse --show-toplevel)
         '';
 
+      "git-default-branch" = # fish
+        ''
+          if git rev-parse --verify master 2>&1 > /dev/null
+            git switch master
+          else if git rev-parse --verify main 2>&1 > /dev/null
+            git switch main
+          else
+            git switch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+          end
+        '';
+
       "git-change" = # fish
         ''
           if count $argv > /dev/null
@@ -166,7 +177,7 @@
       ytmp3 = ''yt-dlp -f bestaudio -x --sponsorblock-remove all --audio-format mp3 --embed-thumbnail --add-metadata -i -o "%(autonumber)s %(title)s.%(ext)s"'';
 
       # Git
-      master = "git switch master";
+      master = "git-default-branch";
       ch = "git-change";
       ghome = "git-home";
       gh = "git-home";
