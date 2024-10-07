@@ -171,7 +171,7 @@
 
       ssh = "env TERM=xterm-256color ssh";
 
-      venvactivate = "source ./.venv/bin/activate.fish";
+      #venvactivate = "source ./.venv/bin/activate.fish";
       rm = "trash";
 
       ytmp3 = ''yt-dlp -f bestaudio -x --sponsorblock-remove all --audio-format mp3 --embed-thumbnail --add-metadata -i -o "%(autonumber)s %(title)s.%(ext)s"'';

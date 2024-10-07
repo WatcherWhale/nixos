@@ -35,6 +35,7 @@
         disabled = false;
         format = "[$indicator]($style)";
         fish_indicator = "";
+        nu_indicator = "";
         bash_indicator = "\\[bash\\] ";
         zsh_indicator = "\\[zsh\\] ";
       };
