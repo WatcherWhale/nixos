@@ -17,21 +17,23 @@
           settings = {
               ['helm-ls'] = {
                   yamlls = {
-                      path = "yaml-language-server",
+                      path = "${pkgs.yaml-language-server}/bin/yaml-language-server",
                   }
               }
           },
       },
       yamlls = {},
       terraformls = {},
-      jsonls = {},
+      jsonls = {
+        cmd = { "${pkgs.nodePackages_latest.vscode-json-languageserver}/bin/vscode-json-languageserver", "--stdio" },
+      },
       bashls = {},
       lua_ls = {},
       dockerls = {},
       golangci_lint_ls = {},
       nixd = {
           formatting = {
-              command = { "nixfmt" },
+              command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
           },
       },
       jqls = {},
