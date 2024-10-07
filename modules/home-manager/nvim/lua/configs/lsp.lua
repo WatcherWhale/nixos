@@ -1,49 +1,18 @@
 local lspconfig = require('lspconfig')
 
-local servers = {
-    gopls = {
-        settings = {
-            gopls = {
-                analyses = {
-                    unusedparams = true,
-                },
-                staticcheck = true,
-            },
-        },
-    },
-    helm_ls = {
-        filetypes = { 'helm' },
-        settings = {
-            ['helm-ls'] = {
-                yamlls = {
-                    path = "yaml-language-server",
-                }
-            }
-        },
-    },
-    yamlls = {},
-    terraformls = {},
-    jsonls = {},
-    bashls = {},
-    lua_ls = {},
-    dockerls = {},
-    golangci_lint_ls = {},
-    nixd = {
-        formatting = {
-            command = { "nixfmt" },
-        },
-    },
-    jqls = {},
-    ts_ls = {},
-}
+local function register_lsp(servers)
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    for server, settings in pairs(servers) do
+        settings.capabilities = vim.tbl_deep_extend('force', {}, capabilities, settings.capabilities or {})
+        settings.on_attach = require("lsp-format").on_attach
+        lspconfig[server].setup(settings)
+    end
 
-for server, settings in pairs(servers) do
-    settings.capabilities = vim.tbl_deep_extend('force', {}, capabilities, settings.capabilities or {})
-    settings.on_attach = require("lsp-format").on_attach
-    lspconfig[server].setup(settings)
+    require("lsp-format").setup {}
 end
 
-require("lsp-format").setup {}
+return {
+    register_lsp = register_lsp
+}

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ... }@inputs:
 {
   # Load all lua files
   xdg.configFile."nvim/lua".source = ./lua;
@@ -10,7 +10,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraLuaConfig = builtins.readFile ./init.lua;
+    extraLuaConfig = builtins.readFile ./init.lua + "\n" + import ./lsp.nix inputs;
 
     plugins = with pkgs.vimPlugins; [
       # Utils
@@ -97,6 +97,8 @@
       docker-compose-language-service
       jq-lsp
       typescript-language-server
+      elixir
+      elixir-ls
     ];
   };
 }
