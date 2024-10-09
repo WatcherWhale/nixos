@@ -323,7 +323,7 @@ in
       // Path to the default editor to use to edit pane scrollbuffer
       // Default: $EDITOR or $VISUAL
       //
-      scrollback_editor "/usr/bin/nvim"
+      scrollback_editor "${homeDir}/.nix-profile/bin/nvim"
 
       // When attaching to an existing session with other users,
       // should the session be mirrored (true)

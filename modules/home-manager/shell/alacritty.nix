@@ -1,7 +1,7 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.alacritty = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       shell = {
         program = "zellij";

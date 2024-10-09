@@ -82,6 +82,15 @@
           };
           modules = [ ./homes/watcherwhale/home.nix ];
         };
+        watcherwhaleArch = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit self;
+            inherit inputs;
+            inherit stablePkgs;
+          };
+          modules = [ ./homes/watcherwhale/arch.nix ];
+        };
         work = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
