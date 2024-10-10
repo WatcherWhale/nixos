@@ -6,8 +6,6 @@
 }@inputs:
 {
   imports = [
-    "${self}/modules/extra/allowUnfree.nix"
-
     ./autorandr.nix
     ./theming.nix
     ./dunst.nix
