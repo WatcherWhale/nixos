@@ -3,6 +3,7 @@
   imports = [
     ./firefox.nix
     ./pwa.nix
+    ./open-in
   ];
 
   home.packages = with pkgs; [
