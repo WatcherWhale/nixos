@@ -1,6 +1,7 @@
 {
   self,
   pkgs,
+  stablePkgs,
   ...
 }:
 {
@@ -23,7 +24,7 @@
 
     go
     golangci-lint
-    go-task
+    stablePkgs.go-task
 
     mqtt-explorer
     dbeaver-bin
