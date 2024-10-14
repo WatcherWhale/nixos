@@ -26,6 +26,7 @@
     numlockx
     polkit_gnome
     wget
+    openssl
 
     (pkgs.writeShellScriptBin "nix-repair-store" ''
       sudo nix-store --verify --check-contents --repair
