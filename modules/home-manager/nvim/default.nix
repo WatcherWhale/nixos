@@ -78,6 +78,7 @@
       luasnip
       cmp_luasnip
       friendly-snippets
+      vim-helm
     ];
 
     extraPackages = with pkgs; [

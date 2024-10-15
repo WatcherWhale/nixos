@@ -26,6 +26,10 @@
     numlockx
     polkit_gnome
     wget
+
+    (pkgs.writeShellScriptBin "nix-repair-store" ''
+      sudo nix-store --verify --check-contents --repair
+    '')
   ];
 
   programs.thunar = {

@@ -13,7 +13,15 @@ in
   imports = [
     "${self}/modules/home-manager/nvim"
     "${self}/modules/home-manager/shell"
+    "${self}/modules/home-manager/session.nix"
+    "${self}/modules/home-manager/packages.nix"
   ];
+
+  nix.gc = {
+    automatic = true;
+    frequency = "hourly";
+    options = "--delete-older-than 7d";
+  };
 
   programs.alacritty.enable = lib.mkForce false;
 
@@ -51,7 +59,7 @@ in
   home.homeDirectory = homePath;
   #programs.git.userEmail = "watcherwhale@maes.family";
 
-  home.packages = with pkgs; [ home-manager ];
-
   home.stateVersion = "24.05";
+
+  programs.home-manager.enable = true;
 }
