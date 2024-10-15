@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+
 -- Markdown Preview
 vim.keymap.set('n', '<leader>M', ':MarkdownPreviewToggle<CR>')
 
