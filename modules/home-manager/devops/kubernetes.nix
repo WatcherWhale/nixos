@@ -16,6 +16,8 @@
     # Azure AKS login cli
     kubelogin
 
+    kubectl-view-secret
+
     kubefwd
     # Extra helper scripts
     (pkgs.writeShellScriptBin "kubectl-fw" ''
