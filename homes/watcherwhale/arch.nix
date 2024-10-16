@@ -14,7 +14,12 @@ in
     "${self}/modules/home-manager/nvim"
     "${self}/modules/home-manager/shell"
     "${self}/modules/home-manager/session.nix"
-    "${self}/modules/home-manager/packages.nix"
+  ];
+
+  home.packages = with pkgs; [
+    nh
+    dig
+    doggo
   ];
 
   nix.gc = {
