@@ -1,6 +1,7 @@
 { self, lib, ... }:
 let
-  hostname = lib.removeSuffix "\n" (builtins.readFile /proc/sys/kernel/hostname);
+  #hostname = lib.removeSuffix "\n" (builtins.readFile /proc/sys/kernel/hostname);
+  hostname = "whaleshark";
 in
 {
   imports = [ "${self}/hosts/${hostname}/autorandr.nix" ];
